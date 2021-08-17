@@ -1,10 +1,15 @@
+-- DATABASE CODES PARA MAG INITILIZE SA LOCAL SYSTEM NIYO USING XAMPP
+-- do not change anything 
+-- para mag work ang classes at included actions
+
+
 CREATE DATABASE satdata;
 
 CREATE TABLE Users (
     idUsers int NOT NULL AUTO_INCREMENT PRIMARY KEY, 
     usernameUsers tinytext NOT NULL,
     emailUsers tinytext NOT NULL,
-    passwordUsers longtext NOT NULL,
+    passwordUsers VARCHAR(255) NOT NULL,
     countryUsers tinytext NOT NULL,
     contactUsers int NOT NULL
 );
