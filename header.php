@@ -24,6 +24,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
+          <!-- DEPENDE KUNG SINO NAKA LOGIN ANG USABILITY NG NAVBAR BUTTOONS -->
           <?php
             if (isset($_SESSION['userUsername']) && $_SESSION['userUsername'] == 'admin') {
               echo '

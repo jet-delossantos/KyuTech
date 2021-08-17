@@ -1,6 +1,10 @@
+<!-- HEADER FILE ATTACHMENt -->
 <?php
     include_once 'header.php';
 ?>
+
+<!-- MAIN INDEX PAGE -->
+<!-- NOTE: THIS FRONTEND IS TEMP ONLY -->
 
 <body>
 

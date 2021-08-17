@@ -82,7 +82,7 @@ class Users extends Dbh {
                 VALUES (?, ?, ?, ?, ?);";
         $stmt = $this->connect()->prepare($sql);
 
-        //hash the password for protection
+            //hash the password for protection
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
         if ($stmt->execute([$username,$email,$hashedPassword,$country,$contact])){
@@ -91,7 +91,7 @@ class Users extends Dbh {
             header('Location:../register.php?status=registerfailed');
         }     
     }
-
+        //Update row based on id
     protected function updateUser($id,$username,$email,$country,$contact) {
         $sql = "UPDATE users SET usernameUsers = ?, emailUsers = ?, countryUsers = ?, contactUsers = ? WHERE idUsers = ?";
         $stmt = $this->connect()->prepare($sql);
@@ -106,6 +106,7 @@ class Users extends Dbh {
     }
 
     //**************DELETE QUERIES******************//
+        //Delete row based on id
     protected function deleteUser($id){
         $sql = "DELETE FROM users WHERE idUsers = ?;";
         $stmt = $this->connect()->prepare($sql);

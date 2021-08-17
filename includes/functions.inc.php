@@ -2,6 +2,8 @@
 include_once 'classautoloader.inc.php';
 
 //FUNCTIONS FOR LOGINPAGE
+
+    //Checking for empty fields
 function emptyLoginFields($username,$password) {
     $result;
     if(empty($username) || empty($password)){
@@ -12,7 +14,11 @@ function emptyLoginFields($username,$password) {
     }
     return $result;
 }
+
+
 //FUNCTIONS FOR REGISTER PAGE
+    
+    //Checking for empty fields
 function emptyFields($username,$email,$country,$contact,$password,$repeatpassword) {
     $result;
     if(empty($username) || empty($email || empty($country)) || empty($contact) || empty($password)|| empty($repeatpassword)){
@@ -23,7 +29,7 @@ function emptyFields($username,$email,$country,$contact,$password,$repeatpasswor
     }
     return $result;
 }
-
+    //Checking for valid username entry na dapat alphanumeric lang walang symbols
 function invalidUsername($username) {
     $result;
     if(!preg_match('/^[a-zA-Z0-9]*$/',$username)){
@@ -34,7 +40,7 @@ function invalidUsername($username) {
     }
     return $result;
 }
-
+    //Checking kung valid ang email na nilagay aka may '@' at '.com' ata
 function invalidEmail($email) {
     $result;
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
@@ -45,7 +51,7 @@ function invalidEmail($email) {
     }
     return $result;
 }
-
+    //Checking kung parehong password ang nilagay
 function passwordMatch($password,$repeatpassword) {
     $result;
     if($password != $repeatpassword){
@@ -56,7 +62,7 @@ function passwordMatch($password,$repeatpassword) {
     }
     return $result;
 }
-
+    //Checking the database kung meron ng same ang username
 function usernameExists($username) {
 
     $userExistsObj = new UsersView();
@@ -70,4 +76,8 @@ function usernameExists($username) {
         $result = false;
     }
     return $result;
+}
+    //(UNDER CONSTRUCTION) Checking if may same email na sa database
+function emailExists() {
+    
 }

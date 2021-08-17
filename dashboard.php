@@ -13,8 +13,11 @@
       <button type="button" class="btn btn-success mx-1 my-1" name="adduser-button"><a class='text-light' href="register.php?status=adduser">Add User</a></button>
       <button type="button" class="btn btn-success mx-1 my-1" name="adduser-button"><a class='text-light' href="main.php">Upload Sat File</a></button>
       <h4></br>User List</h4>
+
+      <!-- CREATING A TABLE FOR USER MANAGEMENT -->
       <table class="table">
         <thead>
+          <!-- TABLE COLUMN NAMES -->
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Username</th>
@@ -26,7 +29,8 @@
           </tr>
         </thead>
         <tbody>
-
+        <!-- VIEW OBJECT FOR QUERYING ALL USERS WITHIN DATABASE -->
+        <!-- AND DISPLAYING INTO TABLE -->
           <?php
             $showAllObj = new UsersView();
             $result = $showAllObj -> showAllUsers();

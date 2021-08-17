@@ -1,3 +1,11 @@
+************************************************
+Wala lang to HAHA 
+Guide ko lang sa mga error/status messages
+Para sa notification banners someday
+************************************************
+
+
+
 invalidurlaccess
 
 loginsuccess 

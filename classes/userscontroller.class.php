@@ -1,6 +1,7 @@
 <?php
-
+//NAKA MVC(Model-View-Controller) tayo 
 //Class na gagamitin pag mag hahandle ng user data within database
+
 class UsersController extends Users {
 
         //Method for creating new user

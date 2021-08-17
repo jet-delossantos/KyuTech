@@ -8,6 +8,8 @@ if(isset($_POST['login-submit'])){
 
     
     //ERROR HANDLER FUNCTIONS!!!!
+
+        //Checking for empty fields in login page
     if (emptyLoginFields($username,$password) !== false){
         header('Location:../index.php?status=emptyfields&username='.$username);
         exit();
