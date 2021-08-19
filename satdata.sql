@@ -1,39 +1,9 @@
--- DATABASE CODES PARA MAG INITILIZE SA LOCAL SYSTEM NIYO USING XAMPP
--- do not change anything 
--- para mag work ang classes at included actions
-
-
--- CREATE DATABASE satdata;
-
--- CREATE TABLE Users (
---     idUsers int NOT NULL AUTO_INCREMENT PRIMARY KEY, 
---     usernameUsers tinytext NOT NULL,
---     emailUsers tinytext NOT NULL,
---     passwordUsers VARCHAR(255) NOT NULL,
---     countryUsers tinytext NOT NULL,
---     contactUsers int NOT NULL
--- );
-
--- CREATE TABLE SatData (
---     idSatData int NOT NULL AUTO_INCREMENT PRIMARY KEY, 
---     gstidSatData tinytext NOT NULL,
---     datatypeSatData tinytext NOT NULL,
---     sensorData tinytext NOT NULL,
---     idSatDataMeta NOT NULL
--- );
-
--- CREATE TABLE SatDataMeta (
---     idSatDataMeta int NOT NULL AUTO_INCREMENT PRIMARY KEY, 
---     fileSatDataMeta BLOB NOT NULL,
---     dateUploadedSatDataMeta date NOT NULL
--- )
-
 -- phpMyAdmin SQL Dump
 -- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 19, 2021 at 07:52 AM
+-- Generation Time: Aug 19, 2021 at 10:36 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -62,7 +32,20 @@ CREATE TABLE `satdata` (
   `gstidSatData` tinytext NOT NULL,
   `datatypeSatData` tinytext NOT NULL,
   `sensorData` tinytext NOT NULL,
-  `File` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`File`))
+  `idSatMetaData` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `satdatameta`
+--
+
+CREATE TABLE `satdatameta` (
+  `idSatDataMeta` int(11) NOT NULL,
+  `fileSatDataMeta` longblob NOT NULL,
+  `dateUploadedSatDataMeta` date NOT NULL,
+  `uploaderSatDataMeta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -85,11 +68,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`idUsers`, `usernameUsers`, `emailUsers`, `passwordUsers`, `countryUsers`, `contactUsers`) VALUES
-(22, 'nope', 'nope@nope.com', '$2y$10$KYs/Aglpc.PBP.DtYhz3Bejrtn7E7G0D1nA7bfXEvW208LH.HBlyy', 'nope', 'nope'),
-(26, 'yes', 'yes@yes.com', '$2y$10$r2WIr0XONq11J/Ot8nU5XObgQ6m9uUG6L1vAsqm/wIR6TY3sq5MOm', 'yes', 'yes'),
-(27, 'admin', 'admin@gmail.com', '$2y$10$gadqyiLcHzRfHvdYTMOHyeWrf.vN2vnFMSfBA4uzVxQQONvgeJAHi', 'admin', 'admin'),
-(28, 'niay', 'niay@gmail.com', '$2y$10$7imsF/n2ydIl.iuzf2NMFeh799s9PBVEA/Of7FOaHueZ3790OI5GC', 'niay', 'niay'),
-(29, 'jet', 'jet@j.com', '$2y$10$oSwcfsi6l35pMJ3tItLKE.e4zbiyW19tXRxuR7kPYUfJokDgl2c46', 'jet', 'jet');
+(22, 'nope', 'nope@nope.com', '$2y$10$KYs/Aglpc.PBP.DtYhz3Bejrtn7E7G0D1nA7bfXEvW208LH.HBlyy', 'Nigeria', 'nope'),
+(26, 'yes', 'yes@yes.com', '$2y$10$r2WIr0XONq11J/Ot8nU5XObgQ6m9uUG6L1vAsqm/wIR6TY3sq5MOm', 'Bangladesh', 'yes'),
+(27, 'admin', 'admin@gmail.com', '$2y$10$gadqyiLcHzRfHvdYTMOHyeWrf.vN2vnFMSfBA4uzVxQQONvgeJAHi', 'KyuTech', 'admin'),
+(28, 'niay', 'niay@gmail.com', '$2y$10$7imsF/n2ydIl.iuzf2NMFeh799s9PBVEA/Of7FOaHueZ3790OI5GC', 'Philippines', 'niay'),
+(29, 'jet', 'jet@j.com', '$2y$10$oSwcfsi6l35pMJ3tItLKE.e4zbiyW19tXRxuR7kPYUfJokDgl2c46', 'Philippines', 'jet');
 
 --
 -- Indexes for dumped tables
@@ -100,6 +83,12 @@ INSERT INTO `users` (`idUsers`, `usernameUsers`, `emailUsers`, `passwordUsers`, 
 --
 ALTER TABLE `satdata`
   ADD PRIMARY KEY (`idSatData`);
+
+--
+-- Indexes for table `satdatameta`
+--
+ALTER TABLE `satdatameta`
+  ADD PRIMARY KEY (`idSatDataMeta`);
 
 --
 -- Indexes for table `users`
@@ -118,6 +107,12 @@ ALTER TABLE `satdata`
   MODIFY `idSatData` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `satdatameta`
+--
+ALTER TABLE `satdatameta`
+  MODIFY `idSatDataMeta` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
@@ -127,4 +122,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-

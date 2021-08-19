@@ -70,7 +70,7 @@
     <hr>
 
     <div class="container-lg ">
-      <form class="form-horizontal" action="includes/upload.inc.php" method="POST" enctype="multipart/form-data">
+      <form class="form-horizontal" action="includes/uploadfile.inc.php" method="POST" enctype="multipart/form-data">
         <input type="file" name="file">
         <br>
         <button type="submit" class="btn btn-success my-3" name="upload-button"><a class='text-light' href="main.php">Upload Sat File</a></button>
