@@ -18,5 +18,12 @@ CREATE TABLE SatData (
     idSatData int NOT NULL AUTO_INCREMENT PRIMARY KEY, 
     gstidSatData tinytext NOT NULL,
     datatypeSatData tinytext NOT NULL,
-    sensorData tinytext NOT NULL
+    sensorData tinytext NOT NULL,
+    idSatDataMeta NOT NULL
 );
+
+CREATE TABLE SatDataMeta (
+    idSatDataMeta int NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+    fileSatDataMeta BLOB NOT NULL,
+    dateUploadedSatDataMeta date NOT NULL
+)

@@ -11,7 +11,6 @@
     <div class="container-lg ">
       <h2 class='text-center my-3'>Admin Dashboard</h2>
       <button type="button" class="btn btn-success mx-1 my-1" name="adduser-button"><a class='text-light' href="register.php?status=adduser">Add User</a></button>
-      <button type="button" class="btn btn-success mx-1 my-1" name="adduser-button"><a class='text-light' href="main.php">Upload Sat File</a></button>
       <h4></br>User List</h4>
 
       <!-- CREATING A TABLE FOR USER MANAGEMENT -->
@@ -29,6 +28,7 @@
           </tr>
         </thead>
         <tbody>
+
         <!-- VIEW OBJECT FOR QUERYING ALL USERS WITHIN DATABASE -->
         <!-- AND DISPLAYING INTO TABLE -->
           <?php
@@ -66,5 +66,32 @@
         </tbody>
       </table>
     </div>
+
+    <hr>
+
+    <div class="container-lg ">
+      <form class="form-horizontal" action="includes/upload.inc.php" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <br>
+        <button type="submit" class="btn btn-success my-3" name="upload-button"><a class='text-light' href="main.php">Upload Sat File</a></button>
+      </form>
+
+      <h4></br>SatData Files</h4>
+
+      <!-- CREATING A TABLE FOR USER MANAGEMENT -->
+      <table class="table">
+        <thead>
+          <!-- TABLE COLUMN NAMES -->
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">File Name</th>
+            <th scope="col">Upload Date</th>
+            <th scope="col">Uploader</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+    </div>
+    
   </body>
 </html>
