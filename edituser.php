@@ -59,7 +59,27 @@ if (isset($_GET['updatebutton'])) {
     <p class = "my-0">Country</p>
     <div class="input-group flex-nowrap my-4 mt-0">
       <span class="input-group-text"><i class="far fa-flag"></i></span>
-      <input type="text" class="form-control" name= "upcountry" value = <?php echo $country ?>>
+      <select class="form-select" name= "upcountry" value ="">
+            <option selected><?php echo $country ?></option>
+            <option value="KyuTech"><i class="fas fa-satellite-dish"></i> KyuTech</option>
+            <option value="Ghana"><i class="fas fa-flag"></i> Ghana</option>
+            <option value="Nigeria"><i class="fas fa-flag"></i> Nigeria</option>
+            <option value="Mongolia"><i class="fas fa-flag"></i> Mongolia</option>
+            <option value="Bangladesh"><i class="fas fa-flag"></i> Bangladesh</option>
+            <option value="Thailand"><i class="fas fa-flag"></i> Thailand</option>
+            <option value="Taiwan"><i class="fas fa-flag"></i> Taiwan</option>
+            <option value="Bhutan"><i class="fas fa-flag"></i> Bhutan</option>
+            <option value="Malaysia"><i class="fas fa-flag"></i> Malaysia</option>
+            <option value="Philippines"><i class="fas fa-flag"></i> Philippines</option>
+            <option value="Sri Lanka"><i class="fas fa-flag"></i> Sri Lanka</option>
+            <option value="Nepal"><i class="fas fa-flag"></i> Nepal</option>
+            <option value="Costa Rica"><i class="fas fa-flag"></i> Costa Rica</option>
+            <option value="Paraguay"><i class="fas fa-flag"></i> Paraguay</option>
+            <option value="Argentina"><i class="fas fa-flag"></i> Argentina</option>
+            <option value="Sudan"><i class="fas fa-flag"></i> Sudan</option>
+            <option value="Zimbabwe"><i class="fas fa-flag"></i> Zimbabwe</option>
+            <option value="Ugandas"><i class="fas fa-flag"></i> Uganda</option>
+          </select>
     </div>
 
     <p class = "my-0">Contact</p>
