@@ -12,5 +12,7 @@ if (isset($_POST['upload-button'])) {
 
     if (in_array($fileActualExt, $allowed)) {
 
-    } e
+    } else {
+        
+    }
 }
