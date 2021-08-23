@@ -1,5 +1,7 @@
 <?php
+
 //Createing a connection to MySQL database
+
  class Dbh {
      private $host = 'localhost'; //hostname of your local MySQL database
      private $user = 'root';      //username of your MySQL database

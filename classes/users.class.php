@@ -11,7 +11,7 @@ class Users extends Dbh {
 
     */
 
-    //**************SELECT QUERIES******************//
+    //************************SELECT QUERIES**************************//
 
         //Get a rowcount based on username
     protected function getUser($username) {
@@ -74,7 +74,7 @@ class Users extends Dbh {
         }
     }
 
-    //**************INSERT/UPDATE QUERIES******************//
+    //**********************INSERT/UPDATE QUERIES**************************//
 
         //Insert rows into database
     protected function setUser($username,$email,$password,$country,$contact) {
@@ -105,7 +105,7 @@ class Users extends Dbh {
         }
     }
 
-    //**************DELETE QUERIES******************//
+    //*********************************DELETE QUERIES**********************//
         //Delete row based on id
     protected function deleteUser($id){
         $sql = "DELETE FROM users WHERE idUsers = ?;";

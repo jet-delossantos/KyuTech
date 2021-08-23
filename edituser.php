@@ -2,30 +2,14 @@
 include_once 'includes/classautoloader.inc.php';
 include_once 'header.php';
 
-
-/* 
-
-WARNING: WORK IN PROGRESS DO NOT BOTHER WITH THIS
-WARNING: WORK IN PROGRESS DO NOT BOTHER WITH THIS
-WARNING: WORK IN PROGRESS DO NOT BOTHER WITH THIS
-WARNING: WORK IN PROGRESS DO NOT BOTHER WITH THIS
-WARNING: WORK IN PROGRESS DO NOT BOTHER WITH THIS
-WARNING: WORK IN PROGRESS DO NOT BOTHER WITH THIS
-WARNING: WORK IN PROGRESS DO NOT BOTHER WITH THIS
-
-*/
 if (isset($_GET['updatebutton'])) {
-
     $id = $_GET['updatebutton'];
-    
     $showUsersObj = new UsersView();
     $results = $showUsersObj-> showOneUser($id);
-
     $username = $results[0]['usernameUsers'];
     $email = $results[0]['emailUsers'];
     $country = $results[0]['countryUsers'];
     $contact = $results[0]['contactUsers'];
-
 }
    if (isset($_POST['updateuser-button'])) {
 
@@ -33,13 +17,10 @@ if (isset($_GET['updatebutton'])) {
      $emailUpdate = $_POST['upemail'];
      $countryUpdate = $_POST['upcountry'];
      $contactUpdate = $_POST['upcontact'];
-
      $updateUsersObj = new UsersController();
      $updateUsersObj-> editUser($id,$usernameUpdate ,$emailUpdate, $countryUpdate, $contactUpdate);
    }
-
 ?>
-<?php  ?>
 <div class="container">
   <h1>UPDATE USER INFO</h1>
   <form class="" method="post">
@@ -87,7 +68,9 @@ if (isset($_GET['updatebutton'])) {
       <span class="input-group-text"><i class="far fa-address-book"></i></span>
       <input type="text" class="form-control" name= "upcontact" value = <?php echo $contact ?>>
     </div>
+
     <button type="submit" class="btn btn-primary text-light" name="updateuser-button">Update</button>
+    
     </div>  
   </form>
 </div>

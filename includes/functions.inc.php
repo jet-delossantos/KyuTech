@@ -2,7 +2,6 @@
 include_once 'classautoloader.inc.php';
 
 //FUNCTIONS FOR LOGINPAGE
-
     //Checking for empty fields
 function emptyLoginFields($username,$password) {
     $result;
@@ -16,8 +15,8 @@ function emptyLoginFields($username,$password) {
 }
 
 
-//FUNCTIONS FOR REGISTER PAGE
-    
+//******************FUNCTIONS FOR REGISTER PAGE****************************//
+
     //Checking for empty fields
 function emptyFields($username,$email,$country,$contact,$password,$repeatpassword) {
     $result;
@@ -29,6 +28,7 @@ function emptyFields($username,$email,$country,$contact,$password,$repeatpasswor
     }
     return $result;
 }
+
     //Checking for valid username entry na dapat alphanumeric lang walang symbols
 function invalidUsername($username) {
     $result;
@@ -40,6 +40,7 @@ function invalidUsername($username) {
     }
     return $result;
 }
+
     //Checking kung valid ang email na nilagay aka may '@' at '.com' ata
 function invalidEmail($email) {
     $result;
@@ -51,6 +52,7 @@ function invalidEmail($email) {
     }
     return $result;
 }
+
     //Checking kung parehong password ang nilagay
 function passwordMatch($password,$repeatpassword) {
     $result;
@@ -62,6 +64,7 @@ function passwordMatch($password,$repeatpassword) {
     }
     return $result;
 }
+
     //Checking the database kung meron ng same ang username
 function usernameExists($username) {
 
@@ -77,6 +80,7 @@ function usernameExists($username) {
     }
     return $result;
 }
+
     //(UNDER CONSTRUCTION) Checking if may same email na sa database
 function emailExists() {
     

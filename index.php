@@ -4,10 +4,8 @@
 ?>
 
 <!-- MAIN INDEX PAGE -->
-<!-- NOTE: THIS FRONTEND IS TEMP ONLY -->
 
 <body>
-
     <div class="container mw-50">
       <h2 class="my-3 ">LOGIN</h2>
         <form class="my-5 mw-50" action="includes/login.inc.php" method = "post">

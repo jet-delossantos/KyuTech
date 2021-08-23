@@ -9,10 +9,7 @@ if (isset($_POST['upload-button']) && isset($_FILES['satfile'])) {
     $fileType = $file['type'];
     $fileError = $file['error'];
     $fileData = file_get_contents($_FILES['satfile']['tmp_name']);
-
-    // $fileExt = explode('.', $fileName);
     $fileExt = pathinfo($fileName, PATHINFO_EXTENSION);
-    //$fileActualExt = strtolower(end($fileExt));
 
     $allowed = array('txt','pdf');
 
