@@ -27,13 +27,13 @@
             <th scope="col">Delete</th>
           </tr>
         </thead>
-        <tbody>
 
+        <tbody>
         <!-- VIEW OBJECT FOR QUERYING ALL USERS WITHIN DATABASE -->
         <!-- AND DISPLAYING INTO TABLE -->
           <?php
-            $showAllObj = new UsersView();
-            $result = $showAllObj -> showAllUsers();
+            $showAllUsersObj = new UsersView();
+            $result = $showAllUsersObj -> showAllUsers();
 
             foreach ($result as $row){
                 $id = $row['idUsers'];
@@ -71,7 +71,7 @@
 
     <div class="container-lg ">
       <form class="form-horizontal" action="includes/uploadfile.inc.php" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file">
+        <input type="file" name="satfile">
         <br>
         <button type="submit" class="btn btn-success my-3" name="upload-button">Upload Sat File</button>
       </form>
@@ -86,12 +86,39 @@
             <th scope="col">ID</th>
             <th scope="col">File Name</th>
             <th scope="col">Upload Date</th>
-            <th scope="col">Uploader</th>
-            <th scope="col">Edit</th>
+            <th scope="col">UploaderID</th>
             <th scope="col">Delete</th>
           </tr>
         </thead>
-    </div>
-    
+        <tbody>
+        <!-- VIEW OBJECT FOR QUERYING ALL USERS WITHIN DATABASE -->
+        <!-- AND DISPLAYING INTO TABLE -->
+          <?php
+            $showAllFilesObj = new SatDataView();
+            $result = $showAllFilesObj -> showAllFiles();
+            foreach ($result as $row){
+                $idFile = $row['idSatDataMeta'];
+                $nameFile = $row['fileNameSatDataMeta'];
+                $dateFile = $row['dateUploadedSatDataMeta'];
+                $uploaderFile = $row['uploaderSatDataMeta'];
+
+                echo '
+                <tr>
+                  <th scope="row">'.$idFile.'</th>
+                  <td><a target="_blank" href=includes/viewfile.inc.php?fileid='.$idFile.'>'.$nameFile.'</a></td>
+                  <td>'.$dateFile.'</td>
+                  <td>'.$uploaderFile.'</td>
+                  <td>
+                    <button class = "btn btn-warning" name="delete-btn">
+                      <a href="includes/deletfile.inc.php?deletebutton='.$idFile.'"><i class="far fa-trash-alt"></i></a>
+                    </button>
+                  </td>
+                </tr>
+                ';
+            }
+           ?>
+        </tbody>
+      </table>
+    </div> 
   </body>
 </html>

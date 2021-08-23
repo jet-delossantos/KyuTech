@@ -27,3 +27,11 @@ passwordsmarcherror
 usernametaken
 
 wrongpassword
+
+fileuploadsuccess
+
+fileuploadfailed
+
+extensionerror
+
+nofileselected

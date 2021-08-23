@@ -1,7 +1,7 @@
 <?php
 //Main Class to Handle SatData
 //Extends to DBH Connection
-class Satdata extends Dbh {
+class SatData extends Dbh {
 
     /* NOTES: 
 
@@ -121,3 +121,40 @@ class Satdata extends Dbh {
 //     }
     
 // }
+    //**********************SELECT QUERIES******************//
+
+            //Get rows of all users
+    protected function getAllFiles() {
+        $sql = "SELECT * FROM satdatameta";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+        $results = $stmt->fetchAll();
+        return $results;
+    } 
+
+            //get user row by index
+    protected function getOneFile($fileId) {
+        $sql = "SELECT * FROM satdatameta WHERE idSatDataMeta = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$fileId]);
+        $results = $stmt->fetchAll();
+        return $results;
+    }   
+            
+    
+
+    //**************INSERT/UPDATE QUERIES******************//
+
+            //Insert rows into database
+    protected function setSatDataMeta($fileNameSatDataMeta, $fileSatDataMeta, $dateUploadedSatDataMeta, $uploaderSatDataMeta) {
+        $sql = "INSERT INTO satdatameta (fileNameSatDataMeta, fileSatDataMeta, dateUploadedSatDataMeta, uploaderSatDataMeta) 
+                VALUES (?, ?, ?, ?);";
+        $stmt = $this->connect()->prepare($sql);
+
+        if ($stmt->execute([$fileNameSatDataMeta, $fileSatDataMeta, $dateUploadedSatDataMeta, $uploaderSatDataMeta])){
+            header('Location:../dashboard.php?status=fileuploadsuccess');
+        } else {
+            header('Location:../dashboard.php?status=fileuploadfailed');
+        }     
+    }
+}

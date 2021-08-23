@@ -20,8 +20,8 @@ class UsersView extends Users {
         return $results;
     }   
     //method para kumuha ng row ng user based sa id
-    public function showOneUser($id) {
-        $results = $this->getOneUser($id);
+    public function showOneUser($filId) {
+        $results = $this->getOneUser($fileId);
         return $results;
     }
 }
