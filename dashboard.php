@@ -70,7 +70,7 @@
         <br>
         <button type="submit" class="btn btn-success my-3" name="upload-button">Upload Sat File</button>
       </form>
-      <h4></br>SatData Files</h4>
+      <h4>SatData Files</h4>
       <!-- CREATING A TABLE FOR USER MANAGEMENT -->
       <table class="table">
         <thead>

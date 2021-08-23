@@ -2,7 +2,6 @@
 
 //Class na gagamitin pag magview lang ng user data from database
 //Galing sa user class ang protected methods
-
 class SatDataView extends SatData {
 
     // //method para tingnan kung nasa database na ang user based on username entry
