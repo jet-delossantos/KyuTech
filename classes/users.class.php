@@ -24,7 +24,7 @@ class Users extends Dbh {
     } 
         //Get rows of all users
     protected function getAllUsers() {
-        $sql = "SELECT * FROM users";
+        $sql = "SELECT * FROM users WHERE NOT usernameUsers = 'admin'";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute();
         $results = $stmt->fetchAll();

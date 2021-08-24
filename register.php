@@ -5,16 +5,16 @@
 
 <body>
     <div class="container">
-      <h2 class="my-5">User Data Register</h2>
+      <h2 class="my-5 text-center">User Registration</h2>
       <form action = "includes/register.inc.php" method ="post">
         <div class="mb-3 my-4">
-          <label class="form-label">Username</label>
+          <label class="mt-2 form-label"><strong>Username</strong></label>
           <input type="text" class="form-control" name="username">
 
-          <label class="form-label">Email</label>
+          <label class="mt-4 form-label"><strong>Email</strong></label>
           <input type="text" class="form-control" name="email">
 
-          <label class="form-label">Country of Origin</label>
+          <label class="mt-4 form-label"><strong>Cousntry of Origin</strong></label>
           <select class="form-select" name= "country" value ="">
             <option selected>Select Country</option>
             <option value="KyuTech"><i class="fas fa-satellite-dish"></i> KyuTech</option>
@@ -34,21 +34,21 @@
             <option value="Argentina"><i class="fas fa-flag"></i> Argentina</option>
             <option value="Sudan"><i class="fas fa-flag"></i> Sudan</option>
             <option value="Zimbabwe"><i class="fas fa-flag"></i> Zimbabwe</option>
-            <option value="Ugandas"><i class="fas fa-flag"></i> Uganda</option>
+            <option value="Uganda"><i class="fas fa-flag"></i> Uganda</option>
           </select>
 
 
-          <label class="form-label">Contact Number</label>
+          <label class=" mt-4 form-label"><strong>Contact Number</strong></label>
           <input type="text" class="form-control" name="contact">
 
-          <label class="form-label">Password</label>
+          <label class="mt-4 form-label"><strong>Password</strong></label>
           <input type="password" class="form-control" name="pwd">
 
-          <label class="form-label">Repeat Password</label>
+          <label class="mt-4 form-label"><strong>Repeat Password</strong></label>
           <input type="password" class="form-control" name="re-pwd">
         </div>
         <button type="submit" class="btn btn-primary" name='register-submit'>Register</button>
       </form>
     </div>
   </body>
-</html>
+</html>v

@@ -9,7 +9,7 @@
   <body>
     <div class="container-lg ">
       <h2 class='text-center my-3'>Admin Dashboard</h2>
-      <button type="button" class="btn btn-success mx-1 my-1" name="adduser-button"><a class='text-light' href="register.php?status=adduser">Add User</a></button>
+      <button type="button" class="btn btn-success mx-1 my-1" name="adduser-button"><a class='text-light' href="adduser.php">Add User</a></button>
       <h4></br>User List</h4>
       <!-- CREATING A TABLE FOR USER MANAGEMENT -->
       <table class="table">
