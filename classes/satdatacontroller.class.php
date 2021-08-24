@@ -8,5 +8,11 @@ class SatDataController extends Satdata {
     public function createSatDataMeta($fileNameSatDataMeta, $fileSatDataMeta,  $dateUploadedSatDataMeta, $uploaderSatDataMeta)
     {
         $this->setSatDataMeta($fileNameSatDataMeta, $fileSatDataMeta, $dateUploadedSatDataMeta, $uploaderSatDataMeta);
-    }    
+    }  
+    
+        //Method for deleting user
+    public function removeFile($id,$filelocation) {
+        $this->deleteFile($id,$filelocation);
+    }
+    
 }

@@ -141,7 +141,6 @@ class SatData extends Dbh {
         return $results;
     }   
             
-    
 
     //**************INSERT/UPDATE QUERIES******************//
 
@@ -156,5 +155,22 @@ class SatData extends Dbh {
         } else {
             header('Location:../dashboard.php?status=fileuploadfailed');
         }     
+    }
+
+    //*********************DELETE QUERIES******************//
+            
+            //Delete row based on id      
+    protected function deleteFile($id, $filelocation){
+        $sql = "DELETE FROM satdatameta WHERE idSatDataMeta = ?;";
+        $stmt = $this->connect()->prepare($sql);
+        
+        if ($stmt->execute([$id])) {
+            unlink($filelocation);
+            header('Location:../dashboard.php?status=filedeletesuccess');
+            exit();
+        } else {
+            header('Location:../dashboard.php?status=filedeletefailed');
+            exit();
+        }
     }
 }

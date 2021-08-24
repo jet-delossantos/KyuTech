@@ -88,12 +88,12 @@
         <!-- AND DISPLAYING INTO TABLE -->
           <?php
             $showAllFilesObj = new SatDataView();
-            $result = $showAllFilesObj -> showAllFiles();
-            foreach ($result as $row){
-                $idFile = $row['idSatDataMeta'];
-                $nameFile = $row['fileNameSatDataMeta'];
-                $dateFile = $row['dateUploadedSatDataMeta'];
-                $uploaderFile = $row['uploaderSatDataMeta'];
+            $resultFile = $showAllFilesObj -> showAllFiles();
+            foreach ($resultFile as $rowFile){
+                $idFile = $rowFile['idSatDataMeta'];
+                $nameFile = $rowFile['fileNameSatDataMeta'];
+                $dateFile = $rowFile['dateUploadedSatDataMeta'];
+                $uploaderFile = $rowFile['uploaderSatDataMeta'];
                 echo '
                 <tr>
                   <th scope="row">'.$idFile.'</th>
@@ -102,7 +102,7 @@
                   <td>'.$uploaderFile.'</td>
                   <td>
                     <button class = "btn btn-warning" name="delete-btn">
-                      <a href="includes/deletfile.inc.php?deletebutton='.$idFile.'"><i class="far fa-trash-alt"></i></a>
+                      <a href="includes/deletefile.inc.php?deletefile='.$idFile.'&filelocation='.$nameFile.'"><i class="far fa-trash-alt"></i></a>
                     </button>
                   </td>
                 </tr>

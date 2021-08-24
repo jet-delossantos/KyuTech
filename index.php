@@ -1,4 +1,4 @@
-<!-- HEADER FILE ATTACHMENt -->
+<!-- HEADER FILE ATTACHMENT -->
 <?php
     include_once 'header.php';
 ?>
