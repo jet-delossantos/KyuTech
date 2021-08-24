@@ -48,7 +48,9 @@
           <input type="password" class="form-control" name="re-pwd">
         </div>
         <button type="submit" class="btn btn-primary" name='register-submit'>Register</button>
+        
       </form>
+      <button onclick="goBack()"class="btn btn-primary">Back</button>
     </div>
   </body>
-</html>v
+</html>

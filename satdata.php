@@ -13,7 +13,7 @@
           crossorigin="anonymous">
 
     <div class="container mt-5 pr-50">
-        
+
     <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
@@ -44,4 +44,6 @@
             </tr>
         </tfoot>
     </table>
+    <button onclick="goBack()"class="btn btn-primary">Back</button>
     </div>
+    

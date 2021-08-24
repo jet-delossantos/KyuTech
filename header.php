@@ -3,6 +3,12 @@
     include_once 'includes/classautoloader.inc.php';
 ?>
 
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">

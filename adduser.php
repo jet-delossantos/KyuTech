@@ -47,8 +47,9 @@
           <label class="mt-4 form-label"><strong>Repeat Password</strong></label>
           <input type="password" class="form-control" name="re-pwd">
         </div>
-        <button type="submit" class="btn btn-primary" name='register-submit'>Add User</button>
+        <button type="submit" class="btn btn-primary" name='register-submit'>Add User</button>        
       </form>
+      <button onclick="goBack()"class="btn btn-primary">Back</button>
     </div>
   </body>
 </html>
