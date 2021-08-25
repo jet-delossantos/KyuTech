@@ -35,3 +35,30 @@ fileuploadfailed
 extensionerror
 
 nofileselected
+
+
+ if ($fileFormat == '16'){
+            $lines = explode("<br />", $fileSatDataMeta);
+            foreach ($lines as $line){
+                $time = "";
+                $sensordata = "";
+
+                $words = explode("\t", $line);  
+
+                $gst = $words[0]."\t".$words[1];
+
+                $datatype = $words[2];
+
+                foreach (range(3,6) as $index){
+                    $time = $time.$words[$index]."\t";  
+                }
+                foreach (range(7,14) as $index){
+                    $sensordata = $sensordata.$words[$index]."\t";  
+                }
+                $checksum = $words[15];
+
+                $sql1 = "INSERT INTO satdata (gstidSatData, datatypeSatData, timeSatData, sensorData, checksumSatData) 
+                VALUES (?, ?, ?, ?, ?, ?);";
+                $stmt1 = $this->connect()->prepare($sql1);
+                $stmt1->execute([$gst, $datatype, $time, $sensordata, $checksum]);
+            }
