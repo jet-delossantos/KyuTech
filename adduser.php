@@ -49,7 +49,7 @@
         </div>
         <button type="submit" class="btn btn-primary" name='register-submit'>Add User</button>        
       </form>
-      <button onclick="goBack()"class="btn btn-primary">Back</button>
+      <button onclick="history.go(-1)"class="btn btn-primary">Back</button>
     </div>
   </body>
 </html>

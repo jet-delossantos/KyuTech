@@ -70,7 +70,7 @@ if (isset($_GET['updatebutton'])) {
     </div>
 
     <button type="submit" class="btn btn-primary text-light" name="updateuser-button">Update</button>
-    <button onclick="goBack()"class="btn btn-primary">Back</button>
+    <button onclick="history.go(-1)"class="btn btn-primary">Back</button>
     </div>  
   </form>
 </div>

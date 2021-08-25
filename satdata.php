@@ -44,6 +44,6 @@
             </tr>
         </tfoot>
     </table>
-    <button onclick="goBack()"class="btn btn-primary">Back</button>
+    <button onclick="history.go(-1)"class="btn btn-primary">Back</button>
     </div>
     
