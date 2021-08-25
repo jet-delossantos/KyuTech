@@ -115,7 +115,7 @@ class SatData extends Dbh {
 // }
     //**********************SELECT QUERIES******************//
 
-            //Get rows of all users
+            //Get rows of all files
     protected function getAllFiles() {
         $sql = "SELECT * FROM satdatameta";
         $stmt = $this->connect()->prepare($sql);
@@ -123,8 +123,16 @@ class SatData extends Dbh {
         $results = $stmt->fetchAll();
         return $results;
     } 
+            //Get rows of all files
+    protected function getAllBytes() {
+        $sql = "SELECT * FROM satdata";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+        $results = $stmt->fetchAll();
+        return $results;
+    } 
 
-            //get user row by index
+            //get file row by index
     protected function getOneFile($fileId) {
         $sql = "SELECT * FROM satdatameta WHERE idSatDataMeta = ?";
         $stmt = $this->connect()->prepare($sql);
