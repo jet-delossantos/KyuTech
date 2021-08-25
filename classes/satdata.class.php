@@ -3,14 +3,6 @@
 //Extends to DBH Connection
 class SatData extends Dbh {
 
-    /* NOTES: 
-
-        Naka MVC Model tayo para sa system na to.
-        Protected ang methods na naghahandle ng database shit kasi sensitive yun.
-        Magagamit lang ang class na to through the view and controller classes na naka extend dito.
-
-    */
-
     //**************SELECT QUERIES******************//
 
 //         //Get a rowcount based on username
@@ -145,12 +137,12 @@ class SatData extends Dbh {
     //**************INSERT/UPDATE QUERIES******************//
 
             //Insert rows into database
-    protected function setSatDataMeta($fileNameSatDataMeta, $fileSatDataMeta, $dateUploadedSatDataMeta, $uploaderSatDataMeta) {
-        $sql = "INSERT INTO satdatameta (fileNameSatDataMeta, fileSatDataMeta, dateUploadedSatDataMeta, uploaderSatDataMeta) 
-                VALUES (?, ?, ?, ?);";
+    protected function setSatDataMeta($fileNameSatDataMeta, $fileSatDataMeta, $fileFormat, $dateUploadedSatDataMeta, $uploaderSatDataMeta) {
+        $sql = "INSERT INTO satdatameta (fileNameSatDataMeta, fileSatDataMeta, formatSatDataMeta, dateUploadedSatDataMeta, uploaderSatDataMeta) 
+                VALUES (?, ?, ?, ?, ?);";
         $stmt = $this->connect()->prepare($sql);
 
-        if ($stmt->execute([$fileNameSatDataMeta, $fileSatDataMeta, $dateUploadedSatDataMeta, $uploaderSatDataMeta])){
+        if ($stmt->execute([$fileNameSatDataMeta, $fileSatDataMeta, $fileFormat, $dateUploadedSatDataMeta, $uploaderSatDataMeta])){
             header('Location:../dashboard.php?status=fileuploadsuccess');
         } else {
             header('Location:../dashboard.php?status=fileuploadfailed');

@@ -85,3 +85,19 @@ function usernameExists($username) {
 function emailExists() {
     
 }
+
+function countBytes($nameFile) {
+    $count = 0;  
+    //Opens a file in read mode  
+    //$file = fopen($nameFile, "r");  
+    $file = $nameFile;
+    $line = explode("<br />", $file);
+    //Gets each line till end of file is reached 
+    $words = explode("\t", end($line));  
+        //Counts each word  
+    $count = $count + count($words);  
+    
+    return $count;  
+ 
+}
+

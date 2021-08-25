@@ -1,6 +1,7 @@
 <?php
     session_start();
     include_once 'includes/classautoloader.inc.php';
+    include 'includes/functions.inc.php';
 ?>
 
 <html lang="en">

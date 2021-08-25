@@ -78,6 +78,7 @@
           <tr>
             <th scope="col">ID</th>
             <th scope="col">File Name</th>
+            <th scope="col">Packet Format</th>
             <th scope="col">Upload Date</th>
             <th scope="col">UploaderID</th>
             <th scope="col">Delete</th>
@@ -94,10 +95,13 @@
                 $nameFile = $rowFile['fileNameSatDataMeta'];
                 $dateFile = $rowFile['dateUploadedSatDataMeta'];
                 $uploaderFile = $rowFile['uploaderSatDataMeta'];
+                $dataFile = $rowFile['fileSatDataMeta'];
+                $formatFile = $rowFile ['formatSatDataMeta'];
                 echo '
                 <tr>
                   <th scope="row">'.$idFile.'</th>
                   <td><a target="_blank" href=includes/viewfile.inc.php?fileid='.$idFile.'>'.$nameFile.'</a></td>
+                  <td>'.$formatFile .' bytes</td>
                   <td>'.$dateFile.'</td>
                   <td>'.$uploaderFile.'</td>
                   <td>
@@ -106,7 +110,8 @@
                     </button>
                   </td>
                 </tr>
-                ';
+                '
+                ;
             }
            ?>
         </tbody>

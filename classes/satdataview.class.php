@@ -20,7 +20,7 @@ class SatDataView extends SatData {
         return $results;
     }
 
-        public function showOneFile($id) {
+    public function showOneFile($id) {
         $results = $this->getOneFile($id);
         return $results;
     }
