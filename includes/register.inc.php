@@ -4,6 +4,7 @@
     include 'functions.inc.php';
 
     if(isset($_POST['register-submit'])){
+        $status = $_GET['status'];
         $username = $_POST['username'];
         $email = $_POST['email'];
         $country = $_POST['country'];
@@ -12,7 +13,7 @@
         $repeatpassword = $_POST['re-pwd'];
 
         //ERROR HANDLER FUNCTIONS!!!!
-        if (emptyFields($username,$email,$country,$contact,$password,$repeatpassword) !== false){
+        if (emptyFields($username, $email, $country,$contact,$password,$repeatpassword) !== false){
             header('Location:../register.php?status=emptyfields');
             exit();
         }
@@ -34,7 +35,7 @@
         }
         else{
             $createUserObj = new UsersController();
-            $createUserObj-> createUser($username,$email,$country,$contact,$password);
+            $createUserObj-> createUser($username, $email, $country, $contact, $password, $status);
         }
     } else {
         header('Location:../index.php?status=invalidurlaccess');

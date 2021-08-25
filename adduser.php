@@ -6,7 +6,7 @@
 <body>
     <div class="container">
       <h2 class="my-5 text-center">Add User Data</h2>
-      <form action = "includes/register.inc.php" method ="post">
+      <form action = "includes/register.inc.php?status=adduser" method ="post">
         <div class="mb-3 my-4">
           <label class="mt-2 form-label"><strong>Username</strong></label>
           <input type="text" class="form-control" name="username">
@@ -14,8 +14,8 @@
           <label class="mt-4 form-label"><strong>Email</strong></label>
           <input type="text" class="form-control" name="email">
 
-          <label class="mt-4 form-label"><strong>Cousntry of Origin</strong></label>
-          <select class="form-select" name= "country" value ="">
+          <label class="mt-4 form-label"><strong>Country of Origin</strong></label>
+          <select class="form-select" name= "country">
             <option selected>Select Country</option>
             <option value="KyuTech"><i class="fas fa-satellite-dish"></i> KyuTech</option>
             <option value="Ghana"><i class="fas fa-flag"></i> Ghana</option>

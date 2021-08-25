@@ -19,6 +19,7 @@
             <tr>
                 <th>ID</th>
                 <th>GST</th>
+                <th>Time</th>
                 <th>Sensor</th>
                 <th>Checksum</th>
             </tr>
@@ -29,14 +30,17 @@
                 <td>00h</td>
                 <td>00h</td>
                 <td>00h</td>
-            </tr>
-            <tr>
-                <td>00h</td>
-                <td>00h</td>
-                <td>00h</td>
                 <td>00h</td>
             </tr>
             <tr>
+                <td>00h</td>
+                <td>00h</td>
+                <td>00h</td>
+                <td>00h</td>
+                <td>00h</td>
+            </tr>
+            <tr>
+                <td>00h</td>
                 <td>00h</td>
                 <td>00h</td>
                 <td>00h</td>

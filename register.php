@@ -6,7 +6,7 @@
 <body>
     <div class="container">
       <h2 class="my-5 text-center">User Registration</h2>
-      <form action = "includes/register.inc.php" method ="post">
+      <form action = "includes/register.inc.php&status=register" method ="post">
         <div class="mb-3 my-4">
           <label class="mt-2 form-label"><strong>Username</strong></label>
           <input type="text" class="form-control" name="username">

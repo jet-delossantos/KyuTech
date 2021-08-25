@@ -80,7 +80,7 @@
             <th scope="col">File Name</th>
             <th scope="col">Packet Format</th>
             <th scope="col">Upload Date</th>
-            <th scope="col">UploaderID</th>
+            <th scope="col">Uploader</th>
             <th scope="col">Delete</th>
           </tr>
         </thead>
@@ -97,13 +97,18 @@
                 $uploaderFile = $rowFile['uploaderSatDataMeta'];
                 $dataFile = $rowFile['fileSatDataMeta'];
                 $formatFile = $rowFile ['formatSatDataMeta'];
+
+                $showUploaderObj = new UsersView();
+                $resultUploader = $showUploaderObj -> showOneUser($uploaderFile);
+                $uploader = $resultUploader[0]['usernameUsers'];
+
                 echo '
                 <tr>
                   <th scope="row">'.$idFile.'</th>
                   <td><a target="_blank" href=includes/viewfile.inc.php?fileid='.$idFile.'>'.$nameFile.'</a></td>
                   <td>'.$formatFile .' bytes</td>
                   <td>'.$dateFile.'</td>
-                  <td>'.$uploaderFile.'</td>
+                  <td>'.$uploader.'</td>
                   <td>
                     <button class = "btn btn-warning" name="delete-btn">
                       <a href="includes/deletefile.inc.php?deletefile='.$idFile.'&filelocation='.$nameFile.'"><i class="far fa-trash-alt"></i></a>
