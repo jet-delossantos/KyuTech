@@ -21,6 +21,7 @@
             <th scope="col">Email</th>
             <th scope="col">Country</th>
             <th scope="col">Contact</th>
+            <th scope="col">Access Level</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
           </tr>
@@ -37,6 +38,7 @@
                 $email = $row['emailUsers'];
                 $country = $row['countryUsers'];
                 $mobile = $row['contactUsers'];
+                $access = $row['permissionsUsers'];
                 echo '
                 <tr>
                   <th scope="row">'.$id.'</th>
@@ -44,6 +46,7 @@
                   <td>'.$email.'</td>
                   <td>'.$country.'</td>
                   <td>'.$mobile.'</td>
+                  <td>'.$access.'</td>
                   <td>
                     <button class ="btn btn-primary" name="edit-btn">
                       <a class="text-light" href="edituser.php?updatebutton='.$id.'"><i class="far fa-edit"></i></a>
