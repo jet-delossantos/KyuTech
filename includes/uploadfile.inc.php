@@ -17,7 +17,7 @@ if (isset($_POST['upload-button']) && isset($_FILES['satfile'])) {
     if (in_array($fileExt, $allowed)) {
         if ($fileError === 0) {
             $fileNameNew = uniqid('',true).".".$fileExt;
-            $fileDestination = '../textfiles/'.$fileNameNew;
+            $fileDestination = '../uploadedfiles/'.$fileNameNew;
             move_uploaded_file($fileTmpName,$fileDestination);
             $dataFileUploaded = date("Y/m/d");
             $uploaderSatDataMeta = $_SESSION['userId'];

@@ -122,5 +122,16 @@
         </tbody>
       </table>
     </div> 
+
   </body>
+
+  <footer class="footer page-footer font-small blue">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2021 Copyright:
+      <a target="_blank " href="https://pbs.twimg.com/profile_images/1220193134157516800/eRlJi2mq.jpg"> KyuTech.com</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
 </html>
