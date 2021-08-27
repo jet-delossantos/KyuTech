@@ -93,11 +93,11 @@ function countBytes($nameFile) {
     $file = $nameFile;
     $line = explode("<br />", $file);
     //Gets each line till end of file is reached 
-    $words = explode("\t", end($line));  
+    $words = explode("\t", $line[0]);  
         //Counts each word  
     $count = $count + count($words);  
     
     return $count;  
- 
 }
+
 

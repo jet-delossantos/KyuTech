@@ -2,7 +2,13 @@
       include 'header.php';
 ?>
 
+    <div class="container py-10 px-10 mt-5">
+
+    </div>
+
     <div class="container px-10 mt-5">
+        <button onclick=""class="btn btn-primary pb-10">Print</button>
+        <button onclick="history.go(-1)"class="btn btn-primary">Back</button>
         <table id="example" class="table table-striped table-bordered" style="width:100%">
             <thead>
                 <tr>
@@ -14,7 +20,7 @@
                     <th>Checksum</th>
                 </tr>
             </thead>
-            <tbody>    
+            <tbody id="myTable">    
             <?php
                     $showAllBytesObj = new SatDataView();
                     $resultBytes = $showAllBytesObj -> showAllBytes();
@@ -40,5 +46,15 @@
             ?>
             </tfoot>
         </table>
-        <button onclick="history.go(-1)"class="btn btn-primary">Back</button>
     </div>  
+
+    <script>
+        $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+        });
+    </script>

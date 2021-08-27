@@ -4,18 +4,40 @@
 
 
 <body>
-    <div class="container">
-      <h2 class="my-5 text-center">User Registration</h2>
-      <form action = "includes/register.inc.php&status=register" method ="post">
-        <div class="mb-3 my-4">
-          <label class="mt-2 form-label"><strong>Username</strong></label>
-          <input type="text" class="form-control" name="username">
+    <div class="hero">
+      <form class="box" action = "includes/register.inc.php" method ="post">
+        <h1>User Registration</h1>
+        <h6> Create an Account. </h6>
+        <div>
 
-          <label class="mt-4 form-label"><strong>Email</strong></label>
-          <input type="text" class="form-control" name="email">
+          <input type="text" placeholder="Username" required  name="username">
 
-          <label class="mt-4 form-label"><strong>Cousntry of Origin</strong></label>
-          <select class="form-select" name= "country" value ="">
+          <input type="text" placeholder="Email Address" required name="email">
+
+          <input type="text" name="country" list="countryname" placeholder="Country of Origin" required>
+            <datalist id="countryname">
+              <option value="Argentina">
+              <option value="Bangladesh">
+              <option value="Bhutan">
+              <option value="Costa Rica">
+              <option value="Ghana">
+              <option value="Japan">
+              <option value="KyuTech">
+              <option value="Malaysia">
+              <option value="Mongolia">
+              <option value="Nepal">
+              <option value="Nigeria">
+              <option value="Paraguay">
+              <option value="Philippines">
+              <option value="Sri Lanka">
+              <option value="Sudan">
+              <option value="Taiwan">
+              <option value="Thailand">
+              <option value="Uganda">
+              <option value="Zimbabwe">     
+            </datalist>
+
+          <!-- <select class="form-select" name= "country" value ="">
             <option selected>Select Country</option>
             <option value="KyuTech"><i class="fas fa-satellite-dish"></i> KyuTech</option>
             <option value="Ghana"><i class="fas fa-flag"></i> Ghana</option>
@@ -35,22 +57,18 @@
             <option value="Sudan"><i class="fas fa-flag"></i> Sudan</option>
             <option value="Zimbabwe"><i class="fas fa-flag"></i> Zimbabwe</option>
             <option value="Uganda"><i class="fas fa-flag"></i> Uganda</option>
-          </select>
+          </select> -->
 
+          <input type="text" placeholder="Contact" required name="contact">
 
-          <label class=" mt-4 form-label"><strong>Contact Number</strong></label>
-          <input type="text" class="form-control" name="contact">
+          <input type="password" placeholder="Password" required name="pwd">
 
-          <label class="mt-4 form-label"><strong>Password</strong></label>
-          <input type="password" class="form-control" name="pwd">
-
-          <label class="mt-4 form-label"><strong>Repeat Password</strong></label>
-          <input type="password" class="form-control" name="re-pwd">
+          <input type="password" placeholder="Re-type Password" required name="re-pwd">
         </div>
-        <button type="submit" class="btn btn-primary" name='register-submit'>Register</button>
-        
+        <button type="submit" name='register-submit'>Register</button>  
+        <button type="register" onclick="history.go(-1)">Back</button>  
       </form>
-      <button onclick="history.go(-1)"class="btn btn-primary">Back</button>
+      
     </div>
   </body>
 </html>

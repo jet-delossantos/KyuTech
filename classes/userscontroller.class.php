@@ -5,9 +5,9 @@
 class UsersController extends Users {
 
         //Method for creating new user
-    public function createUser($username, $email, $password, $country, $contact, $status)
+    public function createUser($username, $email, $password, $country, $contact)
     {
-        $this->setUser($username,$email,$password,$country,$contact,$status);
+        $this->setUser($username,$email,$password,$country,$contact);
     }    
 
         //Method for deleting user

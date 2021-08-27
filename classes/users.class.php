@@ -77,7 +77,7 @@ class Users extends Dbh {
     //**********************INSERT/UPDATE QUERIES**************************//
 
         //Insert rows into database
-    protected function setUser($username, $email, $password, $country, $contact, $status) {
+    protected function setUser($username, $email, $password, $country, $contact) {
         $sql = "INSERT INTO users(usernameUsers, emailUsers, passwordUsers, countryUsers, contactUsers) 
                 VALUES (?, ?, ?, ?, ?);";
         $stmt = $this->connect()->prepare($sql);
@@ -86,14 +86,8 @@ class Users extends Dbh {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
         if ($stmt->execute([$username,$email,$hashedPassword,$country,$contact])){
-            if($status='adduser'){
-                header('Location:../dashboard.php?status=addusersuccess'); 
+                header('Location:../index.php?status=registersuccess'); 
                 exit(); 
-            } else {
-                header('Location:../index.php?status=registersuccess');
-                exit();
-            }
-            
         } else {
             header('Location:../register.php?status=registerfailed');
             exit();

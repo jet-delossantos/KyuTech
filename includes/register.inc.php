@@ -4,7 +4,6 @@
     include 'functions.inc.php';
 
     if(isset($_POST['register-submit'])){
-        $status = $_GET['status'];
         $username = $_POST['username'];
         $email = $_POST['email'];
         $country = $_POST['country'];
@@ -35,7 +34,8 @@
         }
         else{
             $createUserObj = new UsersController();
-            $createUserObj-> createUser($username, $email, $country, $contact, $password, $status);
+            $createUserObj-> createUser($username, $email, $password, $country, $contact );
+
         }
     } else {
         header('Location:../index.php?status=invalidurlaccess');

@@ -6,19 +6,19 @@
 <!-- MAIN INDEX PAGE -->
 
 <body>
-    <div class="container mw-50">
-      <h2 class="my-3 ">LOGIN</h2>
-        <form class="my-5 mw-50" action="includes/login.inc.php" method = "post">
-            <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Username</label>
-            <input type="text" class="form-control" name = "username">
-            <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" name = "pwd">
-            </div>
-        <button type="submit" class="btn btn-primary" name ="login-submit">Log In</button>
+    <div class="hero">
+        <form class="box" action="includes/login.inc.php" method = "post">
+            <h1>LOGIN</h1>
+            <h6> Please enter your username and password. </h6>
+            <input type="text" name = "username" placeholder="Username">
+            <input type="password" name = "pwd" placeholder="Password">
+            <p href="" id="forgot">Forgot Password?</p>
+            <button type="register" value="Sign Up"><a class= 'mt-0 text-dark' href="register.php">Sign Up</button>
+            <button type="submit" name = "login-submit" value="Login">Login</button>
+            <!-- <button type="submit"  name ="login-submit">Log In</button>
+            <button type="button" ><a class= 'text-light' href="register.php">Register</a></button> -->
         </form>
-        <button type="button" class="p-50 btn btn-primary"><a class= 'text-light' href="register.php">Register</a></button>
+        
     </div>
 </body>
 </html>
