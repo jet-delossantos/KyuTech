@@ -59,7 +59,7 @@ if (isset($_GET['updatebutton'])) {
             <option value="Argentina"><i class="fas fa-flag"></i> Argentina</option>
             <option value="Sudan"><i class="fas fa-flag"></i> Sudan</option>
             <option value="Zimbabwe"><i class="fas fa-flag"></i> Zimbabwe</option>
-            <option value="Ugandas"><i class="fas fa-flag"></i> Uganda</option>
+            <option value="Uganda"><i class="fas fa-flag"></i> Uganda</option>
           </select>
     </div>
 
@@ -68,9 +68,8 @@ if (isset($_GET['updatebutton'])) {
       <span class="input-group-text"><i class="far fa-address-book"></i></span>
       <input type="text" class="form-control" name= "upcontact" value = <?php echo $contact ?>>
     </div>
-
     <button type="submit" class="btn btn-primary text-light" name="updateuser-button">Update</button>
-    <button onclick="history.go(-1)"class="btn btn-primary">Back</button>
     </div>  
   </form>
+  <button onclick="history.go(-1)"class="btn btn-primary">Back</button>
 </div>

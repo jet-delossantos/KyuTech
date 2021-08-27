@@ -41,13 +41,14 @@ class Users extends Dbh {
               
         //Select and log user in based on credentials
     protected function countUser($username,$password){
+
         $sql = "SELECT * FROM users WHERE usernameUsers = ?";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$username]);
         $results = $stmt->fetchAll();
         $no_of_rows = $stmt -> rowCount();
-        if ($no_of_rows> 0) {
-            
+
+        if ($no_of_rows> 0) {         
             $passwordCheck = password_verify($password,$results[0]['passwordUsers']);
             if ($passwordCheck == false){
                 header('Location:../index.php?status=wrongpassword');
@@ -57,7 +58,9 @@ class Users extends Dbh {
                 $_SESSION['userId'] = $results[0]['idUsers'];
                 $_SESSION['userUsername'] = $results[0]['usernameUsers'];
                 $_SESSION['userCountry'] = $results[0]['countryUsers'];
-                if ($_SESSION['userUsername'] == 'admin'){
+                $_SESSION['userPermission'] = $results[0]['permissionsUsers'];
+
+                if ($_SESSION['userPermission'] == 'Admin'){
                     header('Location:../dashboard.php?status=loginsuccess');
                 exit();
                 } else {

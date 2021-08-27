@@ -25,7 +25,7 @@
         <ul class="navbar-nav">
           <!-- DEPENDE KUNG SINO NAKA LOGIN ANG USABILITY NG NAVBAR BUTTOONS -->
           <?php
-            if (isset($_SESSION['userUsername']) && $_SESSION['userUsername'] == 'admin') {
+            if (isset($_SESSION['userUsername']) && $_SESSION['userPermission'] == 'Admin') {
               echo '
               <li class="nav-item">
                 <a class="nav-link enabled" href="dashboard.php" tabindex="-1" aria-disabled="false">Admin Dashboard</a>
@@ -38,8 +38,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link enabled" href="includes/logout.inc.php" tabindex="-1" aria-disabled="false">Logout</a>
-              </li>'
-              
+              </li>'  
               ;
             } else if (isset($_SESSION['userUsername'])) {
                echo '
