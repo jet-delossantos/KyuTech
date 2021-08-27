@@ -2,10 +2,6 @@
       include 'header.php';
 ?>
 
-    <div class="container py-10 px-10 mt-5">
-
-    </div>
-
     <div class="container px-10 mt-5 table-responsive ">
         <button onclick=""class="btn btn-primary mx-10">DOWNLOAD</button>
         <button onclick="history.go(-1)"class="btn btn-primary mx-10">Back</button>
@@ -13,6 +9,7 @@
             <thead>
                 <tr>
                     <th>ID</th>
+                    <th>Date/Time</th>
                     <th>GST</th>
                     <th>DataType</th>
                     <th>Time</th>
@@ -35,6 +32,7 @@
                         echo '
                         <tr>
                             <td>'. $idByte .'</td>
+                            <td></td>
                             <td>'. $gstByte.'</td>
                             <td>'.$datatypeByte.'</td>
                             <td>'.$timeByte.'</td>
