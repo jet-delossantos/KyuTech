@@ -64,18 +64,18 @@ class SatData extends Dbh {
                     }
     
                     $sensordata = "";
-                    foreach (range(7,14) as $index){
+                    foreach (range(7,count($words)-2) as $index){
                         $sensordata = $sensordata.$words[$index]."\t";  
                     }
     
-                    $checksum = $words[15]."\r\n";
+                    $checksum = end($words)."\r\n";
     
                     $sql1 = "INSERT INTO satdata (gstidSatData, datatypeSatData, timeSatData, sensorSatData, checksumSatData,idSatMetaData) 
                     VALUES (?, ?, ?, ?, ?, ?);";
                     $stmt1 = $this->connect()->prepare($sql1);
                     $stmt1->execute([$gst, $dataType, $time, $sensordata, $checksum, $last_id]);
                 }
-            } else if ($fileFormat == '31'){
+            } else if ($fileFormat == '33'){
                 $lines = explode("<br />", $fileSatDataMeta);
                 foreach ($lines as $line){
                     $words = explode("\t", $line); 
@@ -91,7 +91,7 @@ class SatData extends Dbh {
                     }
     
                     $sensordata = "";
-                    foreach (range(7,30) as $index){
+                    foreach (range(7, count($words)-1) as $index){
                         $sensordata = $sensordata.$words[$index]."\t";  
                     }
     

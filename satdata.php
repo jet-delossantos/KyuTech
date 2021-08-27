@@ -6,10 +6,10 @@
 
     </div>
 
-    <div class="container px-10 mt-5">
+    <div class="container px-10 mt-5 table-responsive ">
         <button onclick=""class="btn btn-primary pb-10">Print</button>
         <button onclick="history.go(-1)"class="btn btn-primary">Back</button>
-        <table id="example" class="table table-striped table-bordered" style="width:100%">
+        <table id="example" class="table table-striped table-bordered table-wrapper-scroll-y my-custom-scrollbar" style="width:100%">
             <thead>
                 <tr>
                     <th>ID</th>

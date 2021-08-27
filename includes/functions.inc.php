@@ -87,17 +87,26 @@ function emailExists() {
 }
 
 function countBytes($nameFile) {
-    $count = 0;  
+
     //Opens a file in read mode  
-    //$file = fopen($nameFile, "r");  
     $file = $nameFile;
     $line = explode("<br />", $file);
     //Gets each line till end of file is reached 
     $words = explode("\t", $line[0]);  
         //Counts each word  
-    $count = $count + count($words);  
+    $count = count($words);  
     
     return $count;  
+}
+
+function showBytes($nameFile) {
+    $file = $nameFile;
+    $fileData = nl2br(file_get_contents("textfiles/61286ff5587228.84050648.txt"));
+    $line = explode("<br />", $fileData);
+    $words = explode("\t", $line[1]);
+    $count = count($words); 
+    header("Location: $line[0]"); 
+    exit();
 }
 
 

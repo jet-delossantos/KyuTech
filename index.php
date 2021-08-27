@@ -13,8 +13,9 @@
             <input type="text" name = "username" placeholder="Username">
             <input type="password" name = "pwd" placeholder="Password">
             <p href="" id="forgot">Forgot Password?</p>
-            <button type="register" value="Sign Up"><a class= 'mt-0 text-dark' href="register.php">Sign Up</button>
             <button type="submit" name = "login-submit" value="Login">Login</button>
+            <button type="register" value="Sign Up"><a class= 'mt-0 text-dark' href="register.php">Sign Up</button>
+            
             <!-- <button type="submit"  name ="login-submit">Log In</button>
             <button type="button" ><a class= 'text-light' href="register.php">Register</a></button> -->
         </form>
