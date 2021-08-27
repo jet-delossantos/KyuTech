@@ -12,7 +12,7 @@
       <button type="button" class="btn btn-success mx-1 my-1" name="adduser-button"><a class='text-light' href="adduser.php">Add User</a></button>
       <h4></br>User List</h4>
       <!-- CREATING A TABLE FOR USER MANAGEMENT -->
-      <table class="table">
+      <table class="table table-striped table-bordered">
         <thead>
           <!-- TABLE COLUMN NAMES -->
           <tr>
@@ -72,7 +72,7 @@
       </form>
       <h4>SatData Files</h4>
       <!-- CREATING A TABLE FOR USER MANAGEMENT -->
-      <table class="table">
+      <table class="table table-striped table-borderedv">
         <thead>
           <!-- TABLE COLUMN NAMES -->
           <tr>

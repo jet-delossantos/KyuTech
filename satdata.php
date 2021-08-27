@@ -7,8 +7,8 @@
     </div>
 
     <div class="container px-10 mt-5 table-responsive ">
-        <button onclick=""class="btn btn-primary pb-10">Print</button>
-        <button onclick="history.go(-1)"class="btn btn-primary">Back</button>
+        <button onclick=""class="btn btn-primary mx-10">DOWNLOAD</button>
+        <button onclick="history.go(-1)"class="btn btn-primary mx-10">Back</button>
         <table id="example" class="table table-striped table-bordered table-wrapper-scroll-y my-custom-scrollbar" style="width:100%">
             <thead>
                 <tr>
@@ -20,7 +20,7 @@
                     <th>Checksum</th>
                 </tr>
             </thead>
-            <tbody id="myTable">    
+            <tbody>    
             <?php
                     $showAllBytesObj = new SatDataView();
                     $resultBytes = $showAllBytesObj -> showAllBytes();
@@ -44,17 +44,5 @@
                         ';
                     }
             ?>
-            </tfoot>
         </table>
     </div>  
-
-    <script>
-        $(document).ready(function(){
-        $("#myInput").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $("#myTable tr").filter(function() {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-        });
-        });
-    </script>
