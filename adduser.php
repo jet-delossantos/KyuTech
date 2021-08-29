@@ -39,15 +39,16 @@
 
           <input type="text" name="permission" list="permissions" placeholder="Access Level" required>
             <datalist id="permissions">
-                <option value="Admin">
+                <option value="Full Admin">
+                <option value="Uploader Admin">
                 <option value="Regular User">
             </datalist> 
 
           <input type="text" placeholder="Contact" required name="contact">
 
-          <input type="password" placeholder="Password" required name="pwd">
+          <input type="password" placeholder="Password" required name="pwd" value = 'password'>
 
-          <input type="password" placeholder="Re-type Password" required name="re-pwd">
+          <input type="password" placeholder="Re-type Password" required name="re-pwd" value = 'password'>
         </div>
         <button type="submit" name='register-submit'>Register</button>  
         <button type="register" onclick="history.go(-1)">Back</button>  

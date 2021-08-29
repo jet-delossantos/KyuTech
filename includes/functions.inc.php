@@ -99,14 +99,12 @@ function countBytes($nameFile) {
     return $count;  
 }
 
-function showBytes($nameFile) {
-    $file = $nameFile;
-    $fileData = nl2br(file_get_contents("textfiles/61286ff5587228.84050648.txt"));
-    $line = explode("<br />", $fileData);
-    $words = explode("\t", $line[1]);
-    $count = count($words); 
-    header("Location: $line[0]"); 
-    exit();
+function convertHexTime($hextime){
+    $hextime = str_replace("\t","",$hextime);
+    $secs = hexdec('0018A0D1');
+    $timestamp = (((float)$secs + 3818448000)/86400)-2;
+    return $timestamp;
 }
+
 
 

@@ -25,6 +25,11 @@ class SatDataView extends SatData {
         return $results;
     }
 
+    public function showAllBytesByGst($gst) {
+        $results = $this->getAllBytesByGst($gst);
+        return $results;
+    }
+
     public function showOneFile($id) {
         $results = $this->getOneFile($id);
         return $results;

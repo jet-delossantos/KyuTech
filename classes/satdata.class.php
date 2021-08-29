@@ -22,6 +22,15 @@ class SatData extends Dbh {
         $results = $stmt->fetchAll();
         return $results;
     } 
+            //Get rows of all files by GST
+    protected function getAllBytesByGst($gst) {
+        $sql = "SELECT * FROM satdata WHERE gstidSatData REGEXP ?";
+        $stmt = $this->connect()->prepare($sql);
+        $gst = '^'.$gst;
+        $stmt->execute([$gst]);
+        $results = $stmt->fetchAll();
+        return $results;
+    } 
 
             //get file row by index
     protected function getOneFile($fileId) {
@@ -70,10 +79,17 @@ class SatData extends Dbh {
     
                     $checksum = end($words)."\r\n";
     
-                    $sql1 = "INSERT INTO satdata (gstidSatData, datatypeSatData, timeSatData, sensorSatData, checksumSatData,idSatMetaData) 
-                    VALUES (?, ?, ?, ?, ?, ?);";
+                    $sql1 = "INSERT INTO satdata (gstidSatData, datetimeSatData, datatypeSatData, timeSatData, sensorSatData, checksumSatData,idSatMetaData) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?);";
                     $stmt1 = $this->connect()->prepare($sql1);
-                    $stmt1->execute([$gst, $dataType, $time, $sensordata, $checksum, $last_id]);
+
+                    $hextime = str_replace("\t","",$time);
+
+                    $secs = hexdec($hextime);
+
+                    $timestamp = (((float)$secs + 3818448000)/86400)-2;
+
+                    $stmt1->execute([$gst, $timestamp, $dataType, $time, $sensordata, $checksum, $last_id]);
                 }
             } else if ($fileFormat == '33'){
                 $lines = explode("<br />", $fileSatDataMeta);
@@ -96,11 +112,17 @@ class SatData extends Dbh {
                     }
     
                     $checksum = "00"."\r\n";
-    
-                    $sql1 = "INSERT INTO satdata (gstidSatData, datatypeSatData, timeSatData, sensorSatData, checksumSatData, idSatMetaData) 
-                    VALUES (?, ?, ?, ?, ?, ?);";
+                    
+                    $hextime = str_replace("\t","",$time);
+
+                    $secs = hexdec($hextime);
+
+                    $timestamp = (((float)$secs + 3818448000)/86400)-2;
+
+                    $sql1 = "INSERT INTO satdata (gstidSatData, datetimeSatData, datatypeSatData, timeSatData, sensorSatData, checksumSatData, idSatMetaData) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?);";
                     $stmt1 = $this->connect()->prepare($sql1);
-                    $stmt1->execute([$gst, $dataType, $time, $sensordata, $checksum, $last_id]);
+                    $stmt1->execute([$gst, $timestamp, $dataType, $time, $sensordata, $checksum, $last_id]);
                 }
             } 
             header('Location:../dashboard.php?status=fileuploadsuccess');
