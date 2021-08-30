@@ -77,7 +77,7 @@ class SatData extends Dbh {
                         $sensordata = $sensordata.$words[$index]."\t";  
                     }
     
-                    $checksum = end($words)."\r\n";
+                    $checksum = end($words);
     
                     $sql1 = "INSERT INTO satdata (gstidSatData, datetimeSatData, datatypeSatData, timeSatData, sensorSatData, checksumSatData,idSatMetaData) 
                     VALUES (?, ?, ?, ?, ?, ?, ?);";
@@ -111,7 +111,7 @@ class SatData extends Dbh {
                         $sensordata = $sensordata.$words[$index]."\t";  
                     }
     
-                    $checksum = "00"."\r\n";
+                    $checksum = "00";
                     
                     $hextime = str_replace("\t","",$time);
 
