@@ -107,6 +107,7 @@ class SatData extends Dbh {
                     }
     
                     $sensordata = "";
+
                     foreach (range(7, count($words)-1) as $index){
                         $sensordata = $sensordata.$words[$index]."\t";  
                     }

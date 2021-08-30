@@ -63,7 +63,7 @@ class Users extends Dbh {
                     header('Location:../dashboard.php?status=loginsuccess');
                 exit();
                 } else {
-                    header('Location:../satdata.php?status=loginsuccess');
+                    header('Location:../satdata.php?status=loginsuccess&?query=default');
                     exit();
                 }
             } else {

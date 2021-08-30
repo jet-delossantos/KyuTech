@@ -33,7 +33,7 @@
                 <a class="nav-link enabled" href="dashboard.php" tabindex="-1" aria-disabled="false">Admin Dashboard</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link enabled" href="satdata.php" tabindex="-1" aria-disabled="true">Sat Data</a>
+                <a class="nav-link enabled" href="satdata.php?query=default" tabindex="-1" aria-disabled="true">Sat Data</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link enabled" href="account.php" tabindex="-1" aria-disabled="false">Account</a>
@@ -48,7 +48,7 @@
                 <a class="nav-link disabled" href="dashboard.php" tabindex="-1" aria-disabled="false">Admin Dashboard</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link enabled" href="satdata.php" tabindex="-1" aria-disabled="false">Sat Data</a>
+                <a class="nav-link enabled" href="satdata.php?query=default" tabindex="-1" aria-disabled="false">Sat Data</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link enabled" href="header.php" tabindex="-1" aria-disabled="false">Account</a>
