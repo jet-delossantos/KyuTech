@@ -8,7 +8,7 @@
     <div class="container px-10 mt-5 table-responsive ">
 
     <form action="">
-
+    <h2 class="text-center">FILTER DATA</h2>
     <p class = "my-0">Data Type Filter</p>
     <div class="input-group mb-3">
         <input type="text" class="form-control" list="datatype" placeholder="Choose Data Type">
@@ -16,25 +16,25 @@
             <button class="btn btn-outline-secondary" type="button">Add More Data Types</button>
         </div>
             <datalist id="datatype">
-              <option value="Argentina">
-              <option value="Bangladesh">
-              <option value="Bhutan">
-              <option value="Costa Rica">
-              <option value="Ghana">
-              <option value="Japan">
-              <option value="KyuTech">
-              <option value="Malaysia">
-              <option value="Mongolia">
-              <option value="Nepal">
-              <option value="Nigeria">
-              <option value="Paraguay">
-              <option value="Philippines">
-              <option value="Sri Lanka">
-              <option value="Sudan">
-              <option value="Taiwan">
-              <option value="Thailand">
-              <option value="Uganda">
-              <option value="Zimbabwe">     
+
+                    <option value="01">
+                    <option value="02">
+                    <option value="03">
+                    <option value="04">
+                    <option value="05">    
+                    <option value="06">
+                    <option value="07">
+                    <option value="08">
+                    <option value="09">
+                    <option value="0A">
+                    <option value="0B">
+                    <option value="0C">
+                    <option value="0D">
+                    <option value="0E">
+                    <option value="0F">
+                    <option value="21">
+                    <option value="22">
+                    <option value="01">
             </datalist>
     </div>  
     
@@ -54,7 +54,7 @@
     <hr>
 
 
-
+    <h2 class="text-center"> SAT DATA TABLE</h2>
         <button class="btn btn-primary mx-10" onclick="showTableData()">DOWNLOAD .txt FILE</button>
         
         <p class = "my-0"><br></p>

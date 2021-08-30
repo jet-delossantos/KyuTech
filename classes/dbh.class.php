@@ -9,6 +9,7 @@
      private $dbName = 'satdata'; //name of your MySQL database
 
      protected function connect() {
+         set_time_limit(500);
          //Set-up a Data Source Name(DSN)
          $dsn = 'mysql:host='. $this->host .';dbname=' . $this->dbName;
          //Create a PDO connection
