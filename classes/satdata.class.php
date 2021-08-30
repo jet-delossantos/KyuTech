@@ -80,14 +80,14 @@ class SatData extends Dbh {
                     $checksum = end($words);
     
                     $sql1 = "INSERT INTO satdata (gstidSatData, datetimeSatData, datatypeSatData, timeSatData, sensorSatData, checksumSatData,idSatMetaData) 
-                    VALUES (?, ?, ?, ?, ?, ?, ?);";
+                    VALUES (?, DATE_ADD('1899-12-30 00:00:00', INTERVAL ? SECOND), ?, ?, ?, ?, ?);";
                     $stmt1 = $this->connect()->prepare($sql1);
 
                     $hextime = str_replace("\t","",$time);
 
                     $secs = hexdec($hextime);
 
-                    $timestamp = (((float)$secs + 3818448000)/86400)-2;
+                    $timestamp = ((float)$secs + 3818448000);
 
                     $stmt1->execute([$gst, $timestamp, $dataType, $time, $sensordata, $checksum, $last_id]);
                 }
@@ -117,10 +117,10 @@ class SatData extends Dbh {
 
                     $secs = hexdec($hextime);
 
-                    $timestamp = (((float)$secs + 3818448000)/86400)-2;
+                    $timestamp = ((float)$secs + 3818448000);
 
                     $sql1 = "INSERT INTO satdata (gstidSatData, datetimeSatData, datatypeSatData, timeSatData, sensorSatData, checksumSatData, idSatMetaData) 
-                    VALUES (?, ?, ?, ?, ?, ?, ?);";
+                    VALUES (?, DATE_ADD('1899-12-30 00:00:00', INTERVAL ? SECOND), ?, ?, ?, ?, ?);";
                     $stmt1 = $this->connect()->prepare($sql1);
                     $stmt1->execute([$gst, $timestamp, $dataType, $time, $sensordata, $checksum, $last_id]);
                 }

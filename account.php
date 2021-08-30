@@ -11,7 +11,8 @@
 
 
     $dec = hexdec('0018A0D1');
-    echo (((float)$dec + 3818448000)/86400)-2;
+    //echo (((float)$dec + 3818448000)/86400)-2;
+    echo ((float)$dec + 3818448000)-2 . '<br/>';
     // $intdec = (((int)$dec+$newEpoch+3818448000)/86400);
     // echo date("Y-m-d H:i:s", $intdec);
     // $date = new DateTime();

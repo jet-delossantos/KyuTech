@@ -40,7 +40,7 @@
                         $timeByte = $rowBytes['timeSatData'];
                         $sensorByte = $rowBytes['sensorSatData'];
                         $checksumByte = $rowBytes ['checksumSatData'];
-                        $finaldate = date("Y-m-d", strtotime("+51 year", $timestamp));
+                        $finaldate = $rowBytes ['datetimeSatData'];
                         echo '
                         <tr>
                             <td>'. $idByte .'</td>

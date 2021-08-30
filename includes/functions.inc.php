@@ -102,7 +102,7 @@ function countBytes($nameFile) {
 function convertHexTime($hextime){
     $hextime = str_replace("\t","",$hextime);
     $secs = hexdec('0018A0D1');
-    $timestamp = (((float)$secs + 3818448000)/86400)-2;
+    $timestamp = ((float)$secs + 3818448000)-2;
     return $timestamp;
 }
 
