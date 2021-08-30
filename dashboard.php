@@ -1,13 +1,17 @@
 <?php
     include_once "header.php";
+    if (!isset($_SESSION['userId'])){
+      header('Location:index.php');
+    }
 ?>
 
 <!--Font awesome and bootstrap links-->
 <script src="https://kit.fontawesome.com/fde27cd9e3.js" crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  </head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
   <body>
-    <div class="container-lg ">
+    
+    <div class="container-lg " id="usersdiv">
       <h2 class='text-center my-3'>Admin Dashboard</h2>
       <button type="button" class="btn btn-success mx-1 my-1" name="adduser-button"><a class='text-light' href="adduser.php">Add User</a></button>
       <h4></br>User List</h4>
@@ -112,14 +116,22 @@
                   <td>'.$formatFile .' bytes</td>
                   <td>'.$dateFile.'</td>
                   <td>'.$uploader.'</td>
-                  <td>
-                    <button class = "btn btn-warning" name="delete-btn">
-                      <a href="includes/deletefile.inc.php?deletefile='.$idFile.'&filelocation='.$nameFile.'"><i class="far fa-trash-alt"></i></a>
-                    </button>
+                  <td>';
+                if ($_SESSION['userPermission'] != 'Admin') {
+                  echo '
+                    [NO ACCESS]
+                  </td>
+                  </tr>
+                  ';
+                } else {
+                  echo '
+                  <button id="deletebutton" class = "btn btn-warning" name="delete-btn">
+                    <a href="includes/deletefile.inc.php?deletefile='.$idFile.'&filelocation='.$nameFile.'"><i class="far fa-trash-alt"></i></a>
+                  </button>
                   </td>
                 </tr>
-                '
-                ;
+                  ';
+                }
             }
            ?>
         </tbody>
@@ -137,4 +149,17 @@
     <!-- Copyright -->
 
 </footer>
+
+<?php
+      if ($_SESSION['userPermission'] != 'Admin'){
+        echo '
+        <script>
+          var x = document.getElementById("usersdiv");
+          x.style.display = "none";
+          document.getElementById("deletebutton").disabled = true;
+        </script>
+        ';
+      }
+?>
+
 </html>

@@ -1,6 +1,9 @@
 <?php
 
     include 'header.php';
+    if (!isset($_SESSION['userId'])){
+      header('Location:index.php');
+    }
     
     // $newEpoch = strtotime('2020-12-30 0:00:00');
     // echo $newEpoch;

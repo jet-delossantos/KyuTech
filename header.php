@@ -27,7 +27,7 @@
 
           <!-- DEPENDE KUNG SINO NAKA LOGIN ANG USABILITY NG NAVBAR BUTTOONS -->
           <?php
-            if (isset($_SESSION['userUsername']) && $_SESSION['userPermission'] == 'Admin') {
+            if (isset($_SESSION['userUsername']) && $_SESSION['userPermission'] != 'Regular User' ) {
               echo '
               <li class="nav-item">
                 <a class="nav-link enabled" href="dashboard.php" tabindex="-1" aria-disabled="false">Admin Dashboard</a>

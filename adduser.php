@@ -1,5 +1,8 @@
 <?php
     include_once 'header.php';
+    if (!isset($_SESSION['userId'])){
+      header('Location:index.php');
+    }
 ?>
 
 
@@ -39,7 +42,7 @@
 
           <input type="text" name="permission" list="permissions" placeholder="Access Level" required>
             <datalist id="permissions">
-                <option value="Full Admin">
+                <option value="Admin">
                 <option value="Uploader Admin">
                 <option value="Regular User">
             </datalist> 

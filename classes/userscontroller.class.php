@@ -15,8 +15,8 @@ class UsersController extends Users {
         $this->deleteUser($id);
     }
         //Method for editing user info
-    public function editUser($id,$username,$email,$country,$contact) {
-        $this->updateUser($id,$username,$email,$country,$contact);
+    public function editUser($id,$username,$email,$country,$contact,$access) {
+        $this->updateUser($id,$username,$email,$country,$contact,$access);
     }
 
 }

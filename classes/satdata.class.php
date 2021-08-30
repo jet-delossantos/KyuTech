@@ -111,7 +111,7 @@ class SatData extends Dbh {
                         $sensordata = $sensordata.$words[$index]."\t";  
                     }
     
-                    $checksum = "00";
+                    $checksum = end($words);
                     
                     $hextime = str_replace("\t","",$time);
 

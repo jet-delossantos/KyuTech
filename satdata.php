@@ -1,5 +1,8 @@
 <?php
       include 'header.php';
+      if (!isset($_SESSION['userId'])){
+        header('Location:index.php');
+      }
 ?>
 
     <div class="container px-10 mt-5 table-responsive ">
@@ -24,64 +27,7 @@
                         $resultBytes = $showAllBytesObj -> showAllBytes(); 
                     } else {
                         $country = $_SESSION['userCountry'];
-                        switch ($country) {
-                            case "Kyutech":
-                              $gst='01';
-                              break;
-                            case "Ghana":
-                              $gst='02';
-                              break;
-                            case "Nigeria":
-                              $gst='03';
-                              break;
-                            case "Mongolia":
-                              $gst='04';
-                              break; 
-                            case "Bangladesh":
-                              $gst='05';
-                              break;
-                            case "Thailand":
-                              $gst='06';
-                              break;
-                            case "Taiwan":
-                              $gst='07';
-                              break;
-                            case "Bhutan":
-                              $gst='08';
-                              break;
-                            case "Malaysia":
-                              $gst='09';
-                              break;
-                            case "Philippines":
-                              $gst='0A';
-                              break ;
-                            case "Sri Lanka":
-                              $gst='0B';
-                              break; 
-                            case "Nepal":
-                              $gst='0C';
-                              break; 
-                            case "Costa Rica":
-                              $gst='0D';
-                              break; 
-                            case "Paraguay":
-                              $gst='0E';
-                              break; 
-                            case "Argentina":
-                              $gst='0F';
-                              break; 
-                            case "Sudan":
-                              $gst='10';
-                              break; 
-                            case "Zimbabwe":
-                              $gst='11';
-                              break; 
-                            case "Uganda":
-                              $gst='12';
-                              break;   
-                            default:
-                              $gst = '01';
-                          }
+                        $gst = getGst($country);
                         $showAllBytesObj = new SatDataView();
                         $resultBytes = $showAllBytesObj -> showAllBytesByGst($gst); 
                     }
@@ -94,7 +40,6 @@
                         $timeByte = $rowBytes['timeSatData'];
                         $sensorByte = $rowBytes['sensorSatData'];
                         $checksumByte = $rowBytes ['checksumSatData'];
-
                         $finaldate = date("Y-m-d", strtotime("+51 year", $timestamp));
                         echo '
                         <tr>
@@ -113,8 +58,9 @@
         <p id="info"></p>
     </div>  
 
+
+<!-- FUNCTIONS FOR DOWNLOADING TABLE DATA -->
 <script>
-    
     function showTableData() {
         document.getElementById('info').innerHTML = "";
         var myTab = document.getElementById('example');

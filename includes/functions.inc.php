@@ -106,5 +106,64 @@ function convertHexTime($hextime){
     return $timestamp;
 }
 
-
-
+function getGst($country) {
+    switch ($country) {
+        case "Kyutech":
+          $gst='01';
+          break;
+        case "Ghana":
+          $gst='02';
+          break;
+        case "Nigeria":
+          $gst='03';
+          break;
+        case "Mongolia":
+          $gst='04';
+          break; 
+        case "Bangladesh":
+          $gst='05';
+          break;
+        case "Thailand":
+          $gst='06';
+          break;
+        case "Taiwan":
+          $gst='07';
+          break;
+        case "Bhutan":
+          $gst='08';
+          break;
+        case "Malaysia":
+          $gst='09';
+          break;
+        case "Philippines":
+          $gst='0A';
+          break ;
+        case "Sri Lanka":
+          $gst='0B';
+          break; 
+        case "Nepal":
+          $gst='0C';
+          break; 
+        case "Costa Rica":
+          $gst='0D';
+          break; 
+        case "Paraguay":
+          $gst='0E';
+          break; 
+        case "Argentina":
+          $gst='0F';
+          break; 
+        case "Sudan":
+          $gst='10';
+          break; 
+        case "Zimbabwe":
+          $gst='11';
+          break; 
+        case "Uganda":
+          $gst='12';
+          break;   
+        default:
+          $gst = '01';
+        }
+    return $gst;
+}

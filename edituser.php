@@ -1,6 +1,9 @@
 <?php
 include_once 'includes/classautoloader.inc.php';
 include_once 'header.php';
+if (!isset($_SESSION['userId'])){
+  header('Location:index.php');
+}
 
 if (isset($_GET['updatebutton'])) {
     $id = $_GET['updatebutton'];
@@ -8,6 +11,7 @@ if (isset($_GET['updatebutton'])) {
     $results = $showUsersObj-> showOneUser($id);
     $username = $results[0]['usernameUsers'];
     $email = $results[0]['emailUsers'];
+    $access = $results[0]['permissionsUsers'];
     $country = $results[0]['countryUsers'];
     $contact = $results[0]['contactUsers'];
 }
@@ -17,8 +21,9 @@ if (isset($_GET['updatebutton'])) {
      $emailUpdate = $_POST['upemail'];
      $countryUpdate = $_POST['upcountry'];
      $contactUpdate = $_POST['upcontact'];
+     $accessUpdate = $_POST['upaccess'];
      $updateUsersObj = new UsersController();
-     $updateUsersObj-> editUser($id,$usernameUpdate ,$emailUpdate, $countryUpdate, $contactUpdate);
+     $updateUsersObj-> editUser($id,$usernameUpdate ,$emailUpdate, $countryUpdate, $contactUpdate, $accessUpdate);
    }
 ?>
 <div class="container">
@@ -41,7 +46,7 @@ if (isset($_GET['updatebutton'])) {
     <div class="input-group flex-nowrap my-4 mt-0">
       <span class="input-group-text"><i class="far fa-flag"></i></span>
       <select class="form-select" name= "upcountry" value ="">
-            <option selected><?php echo $country ?></option>
+            <option selected><?php echo $access ?></option>
             <option value="KyuTech"><i class="fas fa-satellite-dish"></i> KyuTech</option>
             <option value="Ghana"><i class="fas fa-flag"></i> Ghana</option>
             <option value="Nigeria"><i class="fas fa-flag"></i> Nigeria</option>
@@ -63,13 +68,23 @@ if (isset($_GET['updatebutton'])) {
           </select>
     </div>
 
+    <p class = "my-0">User Access</p>
+    <div class="input-group flex-nowrap my-4 mt-0">
+      <span class="input-group-text"><i class="fas fa-key"></i></span>
+      <select class="form-select" name= "upaccess" value ="">
+            <option selected><?php echo $access?></option>
+            <option value="Admin"><i class="fas fa-satellite-dish"></i> Admin</option>
+            <option value="Uploader Admin"><i class="fas fa-flag"></i> Uploader Admin</option>
+            <option value="Regular User"><i class="fas fa-flag"></i> Regular User</option>
+      </select>
+    </div>
+
     <p class = "my-0">Contact</p>
     <div class="input-group flex-nowrap my-4 mt-0">
       <span class="input-group-text"><i class="far fa-address-book"></i></span>
       <input type="text" class="form-control" name= "upcontact" value = <?php echo $contact ?>>
     </div>
     <button type="submit" class="btn btn-primary text-light" name="updateuser-button">Update</button>
-    <button onclick="history.go(-1)"class="btn btn-primary">Back</button>
   </div>  
   </form>
   

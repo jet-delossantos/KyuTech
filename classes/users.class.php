@@ -41,7 +41,6 @@ class Users extends Dbh {
               
         //Select and log user in based on credentials
     protected function countUser($username,$password){
-
         $sql = "SELECT * FROM users WHERE usernameUsers = ?";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$username]);
@@ -60,7 +59,7 @@ class Users extends Dbh {
                 $_SESSION['userCountry'] = $results[0]['countryUsers'];
                 $_SESSION['userPermission'] = $results[0]['permissionsUsers'];
 
-                if ($_SESSION['userPermission'] == 'Admin'){
+                if ($_SESSION['userPermission'] != 'Regular User'){
                     header('Location:../dashboard.php?status=loginsuccess');
                 exit();
                 } else {
@@ -97,11 +96,11 @@ class Users extends Dbh {
         }     
     }
         //Update row based on id
-    protected function updateUser($id,$username,$email,$country,$contact) {
-        $sql = "UPDATE users SET usernameUsers = ?, emailUsers = ?, countryUsers = ?, contactUsers = ? WHERE idUsers = ?";
+    protected function updateUser($id,$username,$email,$country,$contact,$access) {
+        $sql = "UPDATE users SET usernameUsers = ?, emailUsers = ?, countryUsers = ?, contactUsers = ?, permissionsUsers = ? WHERE idUsers = ?";
         $stmt = $this->connect()->prepare($sql);
         
-        if ($stmt->execute([$username,$email,$country,$contact,(int)$id])) {
+        if ($stmt->execute([$username,$email,$country,$contact,$access,(int)$id])) {
             header('Location:dashboard.php?status=editsuccess');
             exit();
         } else {
