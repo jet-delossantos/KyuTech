@@ -34,25 +34,42 @@
                     <option value="0F">
                     <option value="21">
                     <option value="22">
-                    <option value="01">
+                    <option value="23">
             </datalist>
     </div>  
     
     
     <p class = "my-0">Date Filter</p>
-    <div class="input-group mb-3">
-        <span class="input-group-text">From</span>
-        <input type="text" class="form-control" placeholder="YYYY-mm-dd HH:mm:ss">
-        <span class="input-group-text">To</span>
-        <input type="text" class="form-control" placeholder="YYYY-mm-dd HH:mm:ss">
-    </div>
-    <button class= btn-warning type="submit" name='register-submit'>Filter</button>
-    </form>
+    <div class="row form-group">
+                <label for="date" class="col-sm-1 col-form-label">FROM:</label>
+                <div class="col-sm-4">   
+                    <div class="input-group date" id="datepicker">
+                        <input type="text" class="form-control" name="datefrom">
+                        <span class="input-group-append">
+                            <span class="input-group-text bg-white">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
 
 
+            <div class="row form-group">
+                <label for="date" class="col-sm-1 col-form-label">TO:</label>
+                <div class="col-sm-4">   
+                    <div class="input-group date" id="datepicker1">
+                        <input type="text" class="form-control" name="dateto">
+                        <span class="input-group-append">
+                            <span class="input-group-text bg-white">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
 
     <hr>
-
 
     <h2 class="text-center"> SAT DATA TABLE</h2>
         <button class="btn btn-primary mx-10" onclick="showTableData()">DOWNLOAD .txt FILE</button>
@@ -148,4 +165,13 @@
 
         document.body.removeChild(element);
     }
+
+    $(function(){
+        $('#datepicker').datepicker();
+    });
+
+    $(function(){
+        $('#datepicker1').datepicker();
+    });
+
 </script>
