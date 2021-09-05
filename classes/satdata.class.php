@@ -15,10 +15,46 @@ class SatData extends Dbh {
         return $results;
     } 
             //Get rows of all files
-    protected function getAllBytes() {
-        $sql = "SELECT * FROM satdata";
-        $stmt = $this->connect()->prepare($sql);
-        $stmt->execute();
+    protected function getAllBytes($argumentslist) {
+        if ($argumentslist[0] == "0") {
+            $sql = "SELECT * FROM satdata";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute();
+        }
+        if ($argumentslist[0] == "1") {
+            $dateFrom = $argumentslist[1];
+            $dateTo = $argumentslist[2];
+            $sql = "SELECT * FROM satdata WHERE datetimeSatData BETWEEN CAST(? AS DATE) AND CAST(? AS DATE)";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$dateFrom,$dateTo]);
+        }
+        if ($argumentslist[0] == "2") {
+            $dataType = '^'.$argumentslist[1];
+            $sql = "SELECT * FROM satdata WHERE datatypeSatData REGEXP ? ";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$dataType]);
+        } 
+        if ($argumentslist[0] == "3") {
+            $dataType = '^'.$argumentslist[1];
+            $dateFrom = $argumentslist[2];
+            $dateTo = $argumentslist[3];
+            $sql = "SELECT * FROM satdata WHERE datatypeSatData REGEXP ? AND datetimeSatData BETWEEN CAST(? AS DATE) AND CAST(? AS DATE)";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$dataType,$dateFrom,$dateTo]);
+        }
+        if ($argumentslist[0] == "4") {
+            $dateOn = '^'.$argumentslist[1];
+            $sql = "SELECT * FROM satdata WHERE datetimeSatData REGEXP ? ";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$dateOn]);
+        }
+        if ($argumentslist[0] == "5") {
+            $dataType = '^'.$argumentslist[1];
+            $dateOn = '^'.$argumentslist[2];
+            $sql = "SELECT * FROM satdata WHERE datatypeSatData REGEXP ? AND datetimeSatData REGEXP ? ";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$dataType, $dateOn]);
+        }
         $results = $stmt->fetchAll();
         return $results;
     } 

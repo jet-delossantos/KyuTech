@@ -20,8 +20,8 @@ class SatDataView extends SatData {
         return $results;
     }
 
-    public function showAllBytes() {
-        $results = $this->getAllBytes();
+    public function showAllBytes($argumentslist) {
+        $results = $this->getAllBytes($argumentslist);
         return $results;
     }
 

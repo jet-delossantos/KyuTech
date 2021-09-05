@@ -1,10 +1,10 @@
 <?php
 include_once 'classautoloader.inc.php';
 
-//FUNCTIONS FOR LOGINPAGE
+//********************* FUNCTIONS FOR LOGINPAGE *************************//
     //Checking for empty fields
+
 function emptyLoginFields($username,$password) {
-    $result;
     if(empty($username) || empty($password)){
         $result = true;
     }
@@ -15,11 +15,10 @@ function emptyLoginFields($username,$password) {
 }
 
 
-//******************FUNCTIONS FOR REGISTER PAGE****************************//
+//****************** FUNCTIONS FOR REGISTER PAGE ****************************//
 
     //Checking for empty fields
 function emptyFields($username,$email,$country,$contact,$password,$repeatpassword) {
-    $result;
     if(empty($username) || empty($email || empty($country)) || empty($contact) || empty($password)|| empty($repeatpassword)){
         $result = true;
     }
@@ -31,7 +30,6 @@ function emptyFields($username,$email,$country,$contact,$password,$repeatpasswor
 
     //Checking for valid username entry na dapat alphanumeric lang walang symbols
 function invalidUsername($username) {
-    $result;
     if(!preg_match('/^[a-zA-Z0-9]*$/',$username)){
         $result = true;
     }
@@ -43,7 +41,6 @@ function invalidUsername($username) {
 
     //Checking kung valid ang email na nilagay aka may '@' at '.com' ata
 function invalidEmail($email) {
-    $result;
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         $result = true;
     }
@@ -55,7 +52,6 @@ function invalidEmail($email) {
 
     //Checking kung parehong password ang nilagay
 function passwordMatch($password,$repeatpassword) {
-    $result;
     if($password != $repeatpassword){
         $result = true;
     }
@@ -70,7 +66,6 @@ function usernameExists($username) {
 
     $userExistsObj = new UsersView();
     $row = $userExistsObj -> showUser($username);
-    $result;
 
     if($row > 0){
         $result = true;
@@ -86,6 +81,46 @@ function emailExists() {
     
 }
 
+//********************* FUNCTIONS FOR LOGINPAGE *************************//
+
+    //Checking for empty fields
+  function emptySortFields($datatypefilter,$datefrom,$dateto) {
+      if(empty($datatypefilter) && empty($datefrom) && empty($dateto)) {
+          $result = true;
+      }
+      else {
+          $result = false;
+      }
+      return $result;
+  }
+
+    //Checking for chronological dates
+  function notChronological($datefrom,$dateto) {
+      $fromtimestamp = strtotime($datefrom);
+      $totimestamp = strtotime($dateto);
+      if($fromtimestamp>$totimestamp) {
+          $result = true;
+      }
+      else {
+          $result = false;
+      }
+      return $result;
+  }
+
+  function sameDate($datefrom,$dateto) {
+    $fromtimestamp = strtotime($datefrom);
+    $totimestamp = strtotime($dateto);
+    if($fromtimestamp == $totimestamp) {
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+}
+
+
+//********************* MISC FUNCTIONS *************************//
 function countBytes($nameFile) {
 
     //Opens a file in read mode  
@@ -166,4 +201,29 @@ function getGst($country) {
           $gst = '01';
         }
     return $gst;
+}
+
+function toastNotif($status) {
+  if ($status == "loginsuccess") {
+    echo '
+    <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+      <div class="toast" style="position: absolute; top: 0; right: 0;">
+        <div class="toast-header">
+          <img src="..." class="rounded mr-2" alt="...">
+          <strong class="mr-auto">Bootstrap</strong>
+          <small>11 mins ago</small>
+          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="toast-body">
+          Hello, world! This is a toast message.
+        </div>
+      </div>
+    </div>
+    <script>
+      $(".toast").toast("show")
+    </script>
+    ';
+  }
 }
