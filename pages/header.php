@@ -59,12 +59,12 @@
             <img src="../assets/img/default-avatar.png">
           </div>
         </a>
-        <a class="simple-text logo-normal">
+        <a class="simple-text logo-normal"> User:
             <?php
                 if (isset($_SESSION['userUsername'])) {
                   echo $_SESSION['userUsername'];
                 }
-            ?>
+            ?> 
           </a>
         </div>
 

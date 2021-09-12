@@ -3,6 +3,16 @@
   if (!isset($_SESSION['userId'])){
     header('Location:index.php');
   }
+
+
+      $id = $_SESSION['userId'];
+      $showUsersObj = new UsersView();
+      $results = $showUsersObj-> showOneUser($id);
+      $email = $results[0]['emailUsers'];
+      $access = $results[0]['permissionsUsers'];
+      $country = $results[0]['countryUsers'];
+      $contact = $results[0]['contactUsers'];
+
 ?>
 <div class="sidebar-wrapper">
   <ul class="nav">
@@ -115,11 +125,11 @@
               <div class="card-footer ">
                 <hr />
                 <div class="stats">
-                  <i class="nc-icon nc-share-66"></i> Number of file uploads:
+                  <i class="nc-icon nc-share-66"></i> Number of file uploads: <b>0</b>
                 </div>
                 <br />
                 <div class="stats">
-                  <i class="nc-icon nc-cart-simple"></i> Number of file downloads:
+                  <i class="nc-icon nc-cart-simple"></i> Number of file downloads: <b>0</b>
                 </div>
               </div>
             </div>
@@ -132,10 +142,10 @@
               </div>
               <div class="card-body">
               <form class="" action="" method ="post">
-                <div class="col-md-8 pl-1">
+                <div class="col-md-10 pl-1">
                       <div class="form-group">
                         <label>Email address</label>
-                        <input type="email" class="form-control" placeholder="Email" required name="upemail" value=>
+                        <input type="email" class="form-control" placeholder="Email" required name="upemail" value= "<?php echo $email ?> ">
                       </div>
                 </div>
               </form>
@@ -153,14 +163,14 @@
                 <div class="col-md-8 pl-1">
                       <div class="form-group">
                         <label>Email address</label>
-                        <input type="email" class="form-control" placeholder="Email" required name="upemail" value=>
+                        <input type="email" class="form-control" placeholder="Email" required name="upemail" value= "<?php echo $email ?> ">
                       </div>
                 </div>
                   <div class="col-md-8 pl-1">
                     <div class="form-group">
                       <label>Country of Origin</label>
                       <select class="form-control" name="upcountry" required>
-                        <option selected></option>
+                        <option selected value="<?php echo $country ?> "><?php echo $country ?> </option>
                         <option value="Argentina">Argentina</option>
                         <option value="Bangladesh">Bangladesh</option>
                         <option value="Bhutan">Bhutan</option>
@@ -187,7 +197,7 @@
                     <div class="form-group">
                       <label>Contact Number</label>
                       <input type="text" class="form-control" placeholder="Contact Number" required name="upcontact"
-                        value=>
+                        value= <?php echo $contact ?> >
                     </div>
                   </div>
                   <div class="update ml-auto mr-auto center">
