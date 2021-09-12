@@ -7,7 +7,13 @@
 ?>
 <div class="sidebar-wrapper">
   <ul class="nav">
-    <li class="active ">
+          <?php
+            if (isset($_SESSION['userId']) && $_SESSION['userPermission'] != 'Regular User') {
+              echo '<li class="active">';
+            } else {
+              echo '<li class="hide">';
+            }
+          ?>
       <a href="dashboard.php">
         <i class="nc-icon nc-bank"></i>
         <p>Dashboard</p>
@@ -20,12 +26,17 @@
       </a>
     </li>
     <li>
-      <a href="account.php">
-        <i class="nc-icon nc-pin-3"></i>
+      <a href="./account.php">
+        <i class="nc-icon nc-circle-10"></i>
         <p>Account</p>
       </a>
     </li>
-  </ul>
+    <li>
+      <a href="./about.php">
+        <i class="nc-icon nc-email-85"></i>
+        <p>About Us</p>
+      </a>
+    </li>
 </div>
 </div>
 <div class="main-panel" style="height: 100vh;">
@@ -52,8 +63,8 @@
       <div class="collapse navbar-collapse justify-content-end" id="navigation">
         <ul class="navbar-nav">
           <li class="nav-item btn-rotate dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
               <i class="nc-icon nc-settings-gear-65"></i>
               <p>
                 <span class="d-lg-none d-md-block">Some Actions</span>
@@ -84,18 +95,17 @@
       <div class="col-md-12">
 
         <!-- User List Table -->
-        <div class="card"
-          <?php 
+        <div class="card" <?php 
              if (isset($_SESSION['userUsername']) && $_SESSION['userPermission'] != 'Admin' ) {
               echo 'style="display: none;"';
              }
-          ?>
-        >
+          ?>>
           <div class="card-header">
             <h4 class="card-title"> User List</h4>
           </div>
           <div class="card-body">
-          <button type="submit" class="btn btn-success" name="upload-button"><a class='text-light'href="adduser.php">Add New User</a></button>
+            <button type="submit" class="btn btn-success" name="upload-button"><a class='text-light'
+                href="adduser.php">Add New User</a></button>
             <div class="table-responsive scrollable">
               <table class="table">
                 <thead class=" text-primary">
@@ -149,7 +159,7 @@
           </div>
         </div>
         <!-- End of User List Table -->
-        
+
         <!-- SatData Files Table -->
         <div class="card">
           <div class="card-header">
@@ -157,7 +167,8 @@
             <p class="card-category"> Below are the uploaded satdata files</p>
           </div>
           <div class="card-body">
-            <form class="form-horizontal" action="../includes/uploadfile.inc.php" method="POST" enctype="multipart/form-data">
+            <form class="form-horizontal" action="../includes/uploadfile.inc.php" method="POST"
+              enctype="multipart/form-data">
               <input type="file" name="satfile">
               <button type="submit" class="btn btn-success" name="upload-button">Upload Sat File</button>
             </form>

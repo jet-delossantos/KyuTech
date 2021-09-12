@@ -6,7 +6,13 @@
 ?>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li>
+          <?php
+            if (isset($_SESSION['userId']) && $_SESSION['userPermission'] != 'Regular User') {
+              echo '<li>';
+            } else {
+              echo '<li class="hide">';
+            }
+          ?>
             <a href="./dashboard.php">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
@@ -18,16 +24,16 @@
               <p>Sat Data</p>
             </a>
           </li>
-          <li class="">
+          <li>
             <a href="./account.php">
-              <i class="nc-icon nc-circl-10"></i>
+              <i class="nc-icon nc-circle-10"></i>
               <p>Account</p>
             </a>
           </li>
           <li class="active ">
             <a href="./about.php">
               <i class="nc-icon nc-email-85"></i>
-              <p>Account</p>
+              <p>About Us</p>
             </a>
           </li>
         </ul>

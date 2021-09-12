@@ -29,7 +29,13 @@
 
 <div class="sidebar-wrapper">
         <ul class="nav">
-          <li>
+          <?php
+            if (isset($_SESSION['userId']) && $_SESSION['userPermission'] != 'Regular User') {
+              echo '<li>';
+            } else {
+              echo '<li class="hide">';
+            }
+          ?>
             <a href="./dashboard.php">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>

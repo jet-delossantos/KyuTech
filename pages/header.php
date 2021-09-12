@@ -61,7 +61,7 @@
         </a>
         <a class="simple-text logo-normal">
             <?php
-                if (isset($_SESSION['userUsername']) && $_SESSION['userPermission'] != 'Regular User' ) {
+                if (isset($_SESSION['userUsername'])) {
                   echo 'Welcome, '.$_SESSION['userUsername'].'!';
                 }
             ?>

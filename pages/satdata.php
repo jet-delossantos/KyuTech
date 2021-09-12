@@ -34,7 +34,13 @@
 <!-- Sidebar Navigation -->
 <div class="sidebar-wrapper">
   <ul class="nav">
-    <li>
+      <?php
+            if (isset($_SESSION['userId']) && $_SESSION['userPermission'] != 'Regular User') {
+              echo '<li>';
+            } else {
+              echo '<li class="hide">';
+            }
+      ?>
       <a href="./dashboard.php">
         <i class="nc-icon nc-bank"></i>
         <p>Dashboard</p>
@@ -242,7 +248,7 @@
         <div class="card">
           <div class="card-header">
             <h4 class="card-title"> SatData Table</h4>
-            <p class="card-category"> Showing satdata values base on your GST</p>
+            <p class="card-category"> Showing satdata values based on your GST</p>
             <button class="btn btn-primary mx-10" onclick="showTableData()">DOWNLOAD .txt FILE</button>
           </div>
           <div class="card-body">

@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KyuTech Sat Data</title>  
-    <link rel="stylesheet" href="assets/css/stylesheet.css">
+    <link rel="stylesheet" href="../assets/css/stylesheet.css">
     <!--Font awesome and bootstrap links-->
     <script src="https://kit.fontawesome.com/fde27cd9e3.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -28,7 +28,7 @@
         identifyToastStatus($status);
     ?>
     <div class="hero">
-      <form class="box" action = "includes/register.inc.php" method ="post">
+      <form class="box" action = "../includes/register.inc.php" method ="post">
         <h1>User Registration</h1>
         <h6> Create an Account. </h6>
         <div>

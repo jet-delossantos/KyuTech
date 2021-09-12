@@ -16,3 +16,7 @@ if(isset($_POST['login-submit'])){
         $loginUserObj -> checkLoginUser($username,$password);
     }
   }
+  else {
+    header('Location:../pages/index.php?status=loginfailed');
+    exit();
+  }
