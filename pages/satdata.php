@@ -48,8 +48,14 @@
     </li>
     <li>
       <a href="./account.php">
-        <i class="nc-icon nc-pin-3"></i>
+        <i class="nc-icon nc-circle-10"></i>
         <p>Account</p>
+      </a>
+    </li>
+    <li>
+      <a href="./about.php">
+        <i class="nc-icon nc-email-85"></i>
+        <p>About Us</p>
       </a>
     </li>
   </ul>
@@ -125,10 +131,10 @@
                             <div class="input-group-addon">
                               <i class="fa fa-calendar-check-o">
                               </i>
-                            </div>          
-                              <input class="form-control" name="datefrom" placeholder="MM/DD/YYYY" type="text">
                             </div>
+                            <input class="form-control" name="datefrom" placeholder="MM/DD/YYYY" type="text">
                           </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -137,7 +143,7 @@
                   $(document).ready(function () {
                     var date_input = $('input[name="datefrom"]');
                     var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() :
-                    "body";
+                      "body";
                     date_input.datepicker({
                       format: 'mm/dd/yyyy',
                       container: container,
@@ -160,7 +166,7 @@
                             <div class="input-group-addon">
                               <i class="fa fa-calendar-check-o">
                               </i>
-                            </div>    
+                            </div>
                             <input class="form-control" name="dateto" placeholder="MM/DD/YYYY" type="text">
                           </div>
                         </div>
@@ -170,9 +176,9 @@
                 </div>
                 <script>
                   $(document).ready(function () {
-                    var date_input = $('input[name="dateto"]'); 
+                    var date_input = $('input[name="dateto"]');
                     var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() :
-                    "body";
+                      "body";
                     date_input.datepicker({
                       format: 'mm/dd/yyyy',
                       container: container,
@@ -226,7 +232,8 @@
                 </div>
               </div>
               <button class="btn btn-warning" name='sort-submit' type="submit">Sort</button>
-              <button type="button" class="btn btn-primary"><a class="text-light" href="satdata.php?query=default">Reset</a></button>
+              <button type="button" class="btn btn-primary"><a class="text-light"
+                  href="satdata.php?query=default">Reset</a></button>
             </form>
           </div>
         </div>
@@ -236,9 +243,9 @@
           <div class="card-header">
             <h4 class="card-title"> SatData Table</h4>
             <p class="card-category"> Showing satdata values base on your GST</p>
+            <button class="btn btn-primary mx-10" onclick="showTableData()">DOWNLOAD .txt FILE</button>
           </div>
           <div class="card-body">
-            <button class="btn btn-primary mx-10" onclick="showTableData()">DOWNLOAD .txt FILE</button>
             <div class="table-responsive scrollable">
               <table id="example" class="table-fixed table">
                 <thead class=" text-primary">

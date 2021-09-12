@@ -43,8 +43,14 @@
           </li>
           <li>
             <a href="./account.php">
-              <i class="nc-icon nc-pin-3"></i>
+              <i class="nc-icon nc-circle-10"></i>
               <p>Account</p>
+            </a>
+          </li>
+          <li>
+            <a href="./about.php">
+              <i class="nc-icon nc-email-85"></i>
+              <p>About Us</p>
             </a>
           </li>
           <li class="active ">
@@ -69,7 +75,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:;">Account Profile</a>
+            <a class="navbar-brand" href="javascript:;">Edit User Info</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -120,7 +126,7 @@
           <div class="col-md-9">
           <div class="card card-user">
               <div class="card-header">
-                <h5 class="card-title">Update User Info</h5>
+                <h5 class="card-title">Edit User Info</h5>
               </div>
               <div class="card-body">
                 <form method ="post">
@@ -148,13 +154,12 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Access Level</label>
-                        <input type="text" class="form-control" placeholder = "<?php echo $access ?>" name="upaccess" list="permissions">
-                          <datalist id="permissions">
+                        <select class="form-control" name="upaccess" list="permissions">
                               <option selected><?php echo $access?></option>
-                              <option value="Admin">
-                              <option value="Uploader Admin">
-                              <option value="Regular User">
-                          </datalist>
+                              <option value="Admin">Full Access Admin</option>
+                              <option value="Uploader Admin">Uploader Admin</option>
+                              <option value="Regular User">Regular User</option>
+                      </select>
                       </div>
                     </div>
                   </div>
@@ -162,29 +167,28 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Country of Origin</label>
-                        <input type="text" class="form-control" name= "upcountry" placeholder = "<?php echo $country ?>" list="countryname" required>
-                        <datalist id="countryname">
+                        <select class="form-control" name= "upcountry" required>
                           <option selected><?php echo $country?></option>
-                          <option value="Argentina">
-                          <option value="Bangladesh">
-                          <option value="Bhutan">
-                          <option value="Costa Rica">
-                          <option value="Ghana">
-                          <option value="Japan">
-                          <option value="KyuTech">
-                          <option value="Malaysia">
-                          <option value="Mongolia">
-                          <option value="Nepal">
-                          <option value="Nigeria">
-                          <option value="Paraguay">
-                          <option value="Philippines">
-                          <option value="Sri Lanka">
-                          <option value="Sudan">
-                          <option value="Taiwan">
-                          <option value="Thailand">
-                          <option value="Uganda">
-                          <option value="Zimbabwe">     
-                        </datalist>
+                          <option value="Argentina">Argentina</option>
+                          <option value="Bangladesh">Bangladesh</option>
+                          <option value="Bhutan">Bhutan</option>
+                          <option value="Costa Rica">Costa Rica</option>
+                          <option value="Ghana">Ghana</option>
+                          <option value="Japan">Japan</option>
+                          <option value="KyuTech">KyuTech</option>
+                          <option value="Malaysia">Malaysia</option>
+                          <option value="Mongolia">Mongolia</option>
+                          <option value="Nepal">Nepal</option>
+                          <option value="Nigeria">Nigeria</option>
+                          <option value="Paraguay">Paraguay</option>
+                          <option value="Philippines">Philippines</option>
+                          <option value="Sri Lanka">Sri Lanka</option>
+                          <option value="Sudan">Sudan</option>
+                          <option value="Taiwan">Taiwan</option>
+                          <option value="Thailand">Thailand</option>
+                          <option value="Uganda">Uganda</option>
+                          <option value="Zimbabwe">Zimbabwe</option>     
+                      </select>
                       </div>
                     </div>
                   </div>

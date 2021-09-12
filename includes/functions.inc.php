@@ -235,6 +235,15 @@ function identifyToastStatus ($status) {
     case "wrongpassword":
       echo '<body onload = "showToast(\'top\',\'right\',\'danger\',\'Password is incorrect\');">';
       break;
+    case "fileuploadsuccess":
+      echo '<body onload = "showToast(\'top\',\'right\',\'info\',\'File uploaded\');">';
+      break;
+    case "extensionerror":
+      echo '<body onload = "showToast(\'top\',\'right\',\'danger\',\'Wrong file type. Upload <b>.txt</b> files only.\');">';
+      break;
+    case "fileuploadfailed":
+      echo '<body onload = "showToast(\'top\',\'right\',\'danger\',\'File upload error.\');">';
+      break;
     default:
       echo '<body>';
     }

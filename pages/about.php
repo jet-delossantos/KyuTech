@@ -18,16 +18,16 @@
               <p>Sat Data</p>
             </a>
           </li>
-          <li class="active">
+          <li class="">
             <a href="./account.php">
-              <i class="nc-icon nc-circle-10"></i>
+              <i class="nc-icon nc-circl-10"></i>
               <p>Account</p>
             </a>
           </li>
-          <li>
+          <li class="active ">
             <a href="./about.php">
               <i class="nc-icon nc-email-85"></i>
-              <p>About Us</p>
+              <p>Account</p>
             </a>
           </li>
         </ul>

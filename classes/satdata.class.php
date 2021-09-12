@@ -202,9 +202,9 @@ class SatData extends Dbh {
                     $stmt1->execute([$gst, $timestamp, $dataType, $time, $sensordata, $checksum, $last_id]);
                 }
             } 
-            header('Location:../dashboard.php?status=fileuploadsuccess');
+            header('Location:../pages/dashboard.php?status=fileuploadsuccess');
         } else {
-            header('Location:../dashboard.php?status=fileuploadfailed');
+            header('Location:../pages/dashboard.php?status=fileuploadfailed');
         }     
     }
 

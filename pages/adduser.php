@@ -74,8 +74,8 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Account Settings</a>
+                  <a class="dropdown-item" href="#">Privacy Settings</a>
                   <a class="dropdown-item" href="#">Something else here</a>
                 </div>
               </li>
@@ -112,7 +112,7 @@
                     <div class="col-md-6 pr-1">
                       <div class="form-group">
                         <label>Username</label>
-                        <input type="text" class="form-control" placeholder="Username" required  name="username">
+                        <input type="text" class="form-control" placeholder = "Username" required  name="username">
                       </div>
                     </div>
                     <div class="col-md-6 pl-1">
@@ -126,12 +126,11 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Access Level</label>
-                        <input type="text" class="form-control" placeholder="Access Level" name="permission" list="permissions">
-                          <datalist id="permissions">
-                              <option value="Admin">
-                              <option value="Uploader Admin">
-                              <option value="Regular User">
-                          </datalist>
+                        <select class="form-control"  name="permission">
+                              <option value="Admin">Full Access Admin</option>
+                              <option value="Uploader Admin">Uploader Admin</option>
+                              <option value selected="Regular User">Regular User</option>
+                      </select> 
                       </div>
                     </div>
                   </div>
@@ -139,28 +138,27 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Country of Origin</label>
-                        <input type="text" class="form-control" name="country" list="countryname" placeholder="Country of Origin" required>
-                        <datalist id="countryname">
-                          <option value="Argentina">
-                          <option value="Bangladesh">
-                          <option value="Bhutan">
-                          <option value="Costa Rica">
-                          <option value="Ghana">
-                          <option value="Japan">
-                          <option value="KyuTech">
-                          <option value="Malaysia">
-                          <option value="Mongolia">
-                          <option value="Nepal">
-                          <option value="Nigeria">
-                          <option value="Paraguay">
-                          <option value="Philippines">
-                          <option value="Sri Lanka">
-                          <option value="Sudan">
-                          <option value="Taiwan">
-                          <option value="Thailand">
-                          <option value="Uganda">
-                          <option value="Zimbabwe">     
-                        </datalist>
+                        <select class="form-control" name="country" placeholder="Country of Origin" required>
+                          <option value="Argentina">Argentina</option>
+                          <option value="Bangladesh">Bangladesh</option>
+                          <option value="Bhutan">Bhutan</option>
+                          <option value="Costa Rica">Costa Rica</option>
+                          <option value="Ghana">Ghana</option>
+                          <option value="Japan">Japan</option>
+                          <option selected value="KyuTech">KyuTech</option>
+                          <option value="Malaysia">Malaysia</option>
+                          <option value="Mongolia">Mongolia</option>
+                          <option value="Nepal">Nepal</option>
+                          <option value="Nigeria">Nigeria</option>
+                          <option value="Paraguay">Paraguay</option>
+                          <option value="Philippines">Philippines</option>
+                          <option value="Sri Lanka">Sri Lanka</option>
+                          <option value="Sudan">Sudan</option>
+                          <option value="Taiwan">Taiwan</option>
+                          <option value="Thailand">Thailand</option>
+                          <option value="Uganda">Uganda</option>
+                          <option value="Zimbabwe">Zimbabwe</option>   
+                      </select>
                       </div>
                     </div>
                   </div>
