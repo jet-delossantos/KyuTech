@@ -50,7 +50,7 @@ class Users extends Dbh {
         if ($no_of_rows> 0) {         
             $passwordCheck = password_verify($password,$results[0]['passwordUsers']);
             if ($passwordCheck == false){
-                header('Location:../index.php?status=wrongpassword');
+                header('Location:../pages/index.php?status=wrongpassword');
                 exit();
             } else if ($passwordCheck == true) {
                 session_start();
@@ -60,18 +60,18 @@ class Users extends Dbh {
                 $_SESSION['userPermission'] = $results[0]['permissionsUsers'];
 
                 if ($_SESSION['userPermission'] != 'Regular User'){
-                    header('Location:../dashboard.php?status=loginsuccess');
+                    header('Location:../pages/dashboard.php?status=loginsuccess');
                 exit();
                 } else {
-                    header('Location:../satdata.php?status=loginsuccess&?query=default');
+                    header('Location:../pages/satdata.php?status=loginsuccess&?query=default');
                     exit();
                 }
             } else {
-                header('Location:../index.php?status=loginfailedsql');
+                header('Location:../pages/index.php?status=loginfailedsql');
                 exit();
             }
         } else {
-            header('Location:../index.php?status=loginfailed');
+            header('Location:../pages/index.php?status=loginfailed');
             exit();
         }
     }
@@ -84,14 +84,31 @@ class Users extends Dbh {
                 VALUES (?, ?, ?, ?, ?);";
         $stmt = $this->connect()->prepare($sql);
 
-            //hash the password for protection
+        //hash the password for protection
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
         if ($stmt->execute([$username,$email,$hashedPassword,$country,$contact])){
-                header('Location:../index.php?status=registersuccess'); 
+                header('Location:../pages/index.php?status=registersuccess'); 
                 exit(); 
         } else {
-            header('Location:../register.php?status=registerfailed');
+            header('Location:../pages/register.php?status=registerfailed');
+            exit();
+        }     
+    }
+
+    protected function addUser($username, $email, $password, $country, $contact) {
+        $sql = "INSERT INTO users(usernameUsers, emailUsers, passwordUsers, countryUsers, contactUsers) 
+                VALUES (?, ?, ?, ?, ?);";
+        $stmt = $this->connect()->prepare($sql);
+
+        //hash the password for protection
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+        if ($stmt->execute([$username,$email,$hashedPassword,$country,$contact])){
+                header('Location:../pages/dashboard.php?status=registersuccess'); 
+                exit(); 
+        } else {
+            header('Location:../pages/dashboard.php?status=registerfailed');
             exit();
         }     
     }
@@ -116,12 +133,11 @@ class Users extends Dbh {
         $stmt = $this->connect()->prepare($sql);
         
         if ($stmt->execute([$id])) {
-            header('Location:../dashboard.php?status=deletesuccess');
+            header('Location:../pages/dashboard.php?status=deletesuccess');
             exit();
         } else {
-            header('Location:../dashboard.php?status=deletefailedsql');
+            header('Location:../pages/dashboard.php?status=deletefailedsql');
             exit();
         }
-    }
-    
+    }  
 }

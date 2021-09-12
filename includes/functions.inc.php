@@ -85,7 +85,7 @@ function emailExists() {
 
     //Checking for empty fields
   function emptySortFields($datatypefilter,$datefrom,$dateto) {
-      if(empty($datatypefilter) && empty($datefrom) && empty($dateto)) {
+      if(empty($datatypefilter) && empty($datefrom) && empty($dateto) || empty($dateto) && !empty($datefrom) || empty($datefrom) && !empty($dateto)) {
           $result = true;
       }
       else {
@@ -203,27 +203,40 @@ function getGst($country) {
     return $gst;
 }
 
-function toastNotif($status) {
-  if ($status == "loginsuccess") {
-    echo '
-    <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
-      <div class="toast" style="position: absolute; top: 0; right: 0;">
-        <div class="toast-header">
-          <img src="..." class="rounded mr-2" alt="...">
-          <strong class="mr-auto">Bootstrap</strong>
-          <small>11 mins ago</small>
-          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="toast-body">
-          Hello, world! This is a toast message.
-        </div>
-      </div>
-    </div>
-    <script>
-      $(".toast").toast("show")
-    </script>
-    ';
-  }
+function identifyToastStatus ($status) {
+  switch ($status) {
+    case "invalidurlaccess":
+      echo '<body onload = "showToast(\'top\',\'right\',\'danger\',\'Invalid URL Access!\');">';
+      break;
+    case "loginsuccess":
+      echo '<body onload = "showToast(\'top\',\'right\',\'primary\',\'Login Successful!\');">';
+      break;
+    case "loginfailed":
+      echo '<body onload = "showToast(\'top\',\'right\',\'warning\',\'Login Failed!\');">';
+      break;
+    case "logoutsuccess":
+      echo '<body onload = "showToast(\'top\',\'right\',\'primary\',\'Logout Successful!\');">';
+      break;
+    case "registersuccess":
+      echo '<body onload = "showToast(\'top\',\'right\',\'primary\',\'Register Successful!\');">';
+      break;
+    case "registerfailed":
+      echo '<body onload = "showToast(\'top\',\'right\',\'warning\',\'Register Failed. Please Try Again.\');">';
+      break;
+    case "emptyfields":
+      echo '<body onload = "showToast(\'top\',\'right\',\'warning\',\'Complete all fields!\');">';
+      break;
+    case "passwordsmatcherror":
+      echo '<body onload = "showToast(\'top\',\'right\',\'warning\',\'Your passwords do not match\');">';
+      break;
+    case "usernametaken":
+      echo '<body onload = "showToast(\'top\',\'right\',\'danger\',\'Username is already taken\');">';
+      break;
+    case "wrongpassword":
+      echo '<body onload = "showToast(\'top\',\'right\',\'danger\',\'Password is incorrect\');">';
+      break;
+    default:
+      echo '<body>';
+    }
 }
+?>

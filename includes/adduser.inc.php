@@ -13,31 +13,31 @@
 
         //ERROR HANDLER FUNCTIONS!!!!
         if (emptyFields($username, $email, $country,$contact,$password,$repeatpassword) !== false){
-            header('Location:../pages/register.php?status=emptyfields');
+            header('Location:../pages/adduser.php?status=emptyfields');
             exit();
         }
         if (invalidUsername($username) !== false){
-            header('Location:../pages/register.php?status=invalidusername');
+            header('Location:../pages/adduser.php?status=invalidusername');
             exit();
         }
         if (invalidEmail($email) !== false){
-            header('Location:../pages/register.php?status=invalidemail');
+            header('Location:../pages/adduser.php?status=invalidemail');
             exit();
         }
         if (passwordMatch($password,$repeatpassword) !== false){
-            header('Location:../pages/register.php?status=passwordsmatcherror');
+            header('Location:../pages/adduser.php?status=passwordsmatcherror');
             exit();
         }
         if (usernameExists($username) !== false){
-            header('Location:../pages/register.php?status=usernametaken');
+            header('Location:../pages/adduser.php?status=usernametaken');
             exit();
         }
         else{
             $createUserObj = new UsersController();
-            $createUserObj-> createUser($username, $email, $password, $country, $contact );
+            $createUserObj-> insertUser($username, $email, $password, $country, $contact );
 
         }
     } else {
-        header('Location:../pages/index.php?status=invalidurlaccess');
+        header('Location:../pages/dashboard.php?status=invalidurlaccess');
         exit();
     }

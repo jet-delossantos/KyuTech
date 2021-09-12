@@ -25,14 +25,14 @@ if (isset($_POST['upload-button']) && isset($_FILES['satfile'])) {
             $createSatDataObj = new SatDataController();
             $createSatDataObj-> createSatDataMeta($fileDestination, $fileData, $fileFormat, $dataFileUploaded, $uploaderSatDataMeta);
         } else {
-            header("Location:../dashboard.php?status=fileerrorexists");
+            header("Location:../pages/dashboard.php?status=fileerrorexists");
             exit();
         }
     } else {
-        header("Location:../dashboard.php?status=extensionerror");
+        header("Location:../pages/dashboard.php?status=extensionerror");
         exit();
     }
 } else {
-    header("Location:../dashboard.php?status=nofileselected");
+    header("Location:../pages/dashboard.php?status=nofileselected");
         exit();
 }

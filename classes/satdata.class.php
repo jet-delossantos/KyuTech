@@ -59,11 +59,51 @@ class SatData extends Dbh {
         return $results;
     } 
             //Get rows of all files by GST
-    protected function getAllBytesByGst($gst) {
-        $sql = "SELECT * FROM satdata WHERE gstidSatData REGEXP ?";
-        $stmt = $this->connect()->prepare($sql);
-        $gst = '^'.$gst;
-        $stmt->execute([$gst]);
+    protected function getAllBytesByGst($gst ,$argumentslist) {
+
+        if ($argumentslist[0] == "0") {
+            $sql = "SELECT * FROM satdata WHERE gstidSatData REGEXP ?";
+            $stmt = $this->connect()->prepare($sql);
+            $gst = '^'.$gst;
+            $stmt->execute([$gst]);
+        }
+        if ($argumentslist[0] == "1") {
+            $dateFrom = $argumentslist[1];
+            $dateTo = $argumentslist[2];
+            $sql = "SELECT * FROM satdata WHERE gstidSatData REGEXP ? datetimeSatData BETWEEN CAST(? AS DATE) AND CAST(? AS DATE)";
+            $stmt = $this->connect()->prepare($sql);
+            $gst = '^'.$gst;
+            $stmt->execute([$gst,$dateFrom,$dateTo]);
+        }
+        if ($argumentslist[0] == "2") {
+            $dataType = '^'.$argumentslist[1];
+            $sql = "SELECT * FROM satdata WHERE gstidSatData REGEXP ? AND datatypeSatData REGEXP ? ";
+            $stmt = $this->connect()->prepare($sql);
+            $gst = '^'.$gst;
+            $stmt->execute([$gst,$dataType]);
+        } 
+        if ($argumentslist[0] == "3") {
+            $dataType = '^'.$argumentslist[1];
+            $dateFrom = $argumentslist[2];
+            $dateTo = $argumentslist[3];
+            $sql = "SELECT * FROM satdata WHERE gstidSatData REGEXP ? AND datatypeSatData REGEXP ? AND datetimeSatData BETWEEN CAST(? AS DATE) AND CAST(? AS DATE)";
+            $stmt = $this->connect()->prepare($sql);
+            $gst = '^'.$gst;
+            $stmt->execute([$gst,$dataType,$dateFrom,$dateTo]);
+        }
+        if ($argumentslist[0] == "4") {
+            $dateOn = '^'.$argumentslist[1];
+            $sql = "SELECT * FROM satdata WHERE gstidSatData REGEXP ? AND datetimeSatData REGEXP ?";
+            $stmt = $this->connect()->prepare($sql);
+            $gst = '^'.$gst;
+            $stmt->execute([$gst, $dateOn]);
+        }
+        if ($argumentslist[0] == "5") {
+            $sql = "SELECT * FROM satdata WHERE gstidSatData REGEXP ? AND datatypeSatData REGEXP ? AND datetimeSatData REGEXP ? ";
+            $stmt = $this->connect()->prepare($sql);
+            $gst = '^'.$gst;
+            $stmt->execute([$gst, $dataType, $dateOn]);
+        }
         $results = $stmt->fetchAll();
         return $results;
     } 
@@ -178,10 +218,10 @@ class SatData extends Dbh {
         
         if ($stmt->execute([$id,$id])) {
             unlink($filelocation);
-            header('Location:../dashboard.php?status=filedeletesuccess');
+            header('Location:../pages/dashboard.php?status=filedeletesuccess');
             exit();
         } else {
-            header('Location:../dashboard.php?status=filedeletefailed');
+            header('Location:../pages/dashboard.php?status=filedeletefailed');
             exit();
         }
     }
