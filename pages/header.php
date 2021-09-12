@@ -62,7 +62,7 @@
         <a class="simple-text logo-normal">
             <?php
                 if (isset($_SESSION['userUsername'])) {
-                  echo 'Welcome, '.$_SESSION['userUsername'].'!';
+                  echo $_SESSION['userUsername'];
                 }
             ?>
           </a>
