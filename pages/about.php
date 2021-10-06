@@ -105,24 +105,9 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            <h4 class="card-title"> Salbakuta</h4>
-            <p class="card-category"> Laki sa layaw</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est laborum.</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <h4 class="card-title"> Salbakuta</h4>
-            <p class="card-category"> Laki sa layaw</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est laborum.</p>
+            <h4 class="card-title"> PAGE IS UNDER CONSTRUCTION</h4>
+            <p class="card-category"> Thank you for your patience</p>
+            <img src="../assets/img/Building 01.jpg" alt="under construction">
           </div>
         </div>
       </div>
