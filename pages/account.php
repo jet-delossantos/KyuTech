@@ -120,7 +120,6 @@
                 <h5 class="card-title">User logged in: <b><?php echo $_SESSION['userUsername']; ?></b></h5>
               </div>
               <div class="card-body">
-                
               </div>
               <div class="card-footer ">
                 <hr />
@@ -135,20 +134,28 @@
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card ">
+            <div class="card card-chart">
               <div class="card-header ">
                 <h5 class="card-title">Change Password</h5>
                 <p class="card-category">Request for a password reset</p>
               </div>
               <div class="card-body">
-              <form class="" action="" method ="post">
-                <div class="col-md-10 pl-1">
-                      <div class="form-group">
-                        <label>Email address</label>
-                        <input type="email" class="form-control" placeholder="Email" required name="upemail" value= "<?php echo $email ?> ">
-                      </div>
-                </div>
-              </form>
+                <form class="" action="" method="post">
+                  <div class="col-md-10 pl-1">
+                    <div class="form-group">
+                      <label>Old Password</label>
+                      <input type="password" class="form-control" placeholder="Email" required name="upemail"
+                        value="<?php echo $email ?> ">
+                      <label>New Password</label>
+                      <input type="password" class="form-control" placeholder="Email" required name="upemail"
+                        value="<?php echo $email ?> ">
+                      <label>Repeat Password</label>
+                      <input type="password" class="form-control" placeholder="Email" required name="upemail"
+                        value="<?php echo $email ?> ">
+                    </div>
+                  </div>
+                  <button type="submit" name="updateuser-button" class="btn btn-primary btn-round">Change My Password</button>
+                </form>
               </div>
             </div>
           </div>
@@ -159,13 +166,14 @@
                 <p class="card-category">you can update your account information here</p>
               </div>
               <div class="card-body">
-              <form class="" action="" method ="post">
-                <div class="col-md-8 pl-1">
-                      <div class="form-group">
-                        <label>Email address</label>
-                        <input type="email" class="form-control" placeholder="Email" required name="upemail" value= "<?php echo $email ?> ">
-                      </div>
-                </div>
+                <form class="" action="" method="post">
+                  <div class="col-md-8 pl-1">
+                    <div class="form-group">
+                      <label>Email address</label>
+                      <input type="email" class="form-control" placeholder="Email" required name="upemail"
+                        value="<?php echo $email ?> ">
+                    </div>
+                  </div>
                   <div class="col-md-8 pl-1">
                     <div class="form-group">
                       <label>Country of Origin</label>
@@ -197,7 +205,7 @@
                     <div class="form-group">
                       <label>Contact Number</label>
                       <input type="text" class="form-control" placeholder="Contact Number" required name="upcontact"
-                        value= <?php echo $contact ?> >
+                        value=<?php echo $contact ?>>
                     </div>
                   </div>
                   <div class="update ml-auto mr-auto center">
