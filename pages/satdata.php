@@ -35,7 +35,7 @@
 <div class="sidebar-wrapper">
   <ul class="nav">
       <?php
-            if (isset($_SESSION['userId']) && $_SESSION['userPermission'] != 'Regular User') {
+            if (isset($_SESSION['userId']) && $_SESSION['userPermission'] != '2') {
               echo '<li>';
             } else {
               echo '<li class="hide">';
@@ -267,7 +267,7 @@
                 </thead>
                 <tbody>
                   <?php
-                              if ($_SESSION['userPermission'] == 'Admin'){
+                              if ($_SESSION['userPermission'] == '0'){
                                   if ($query == "default"){ 
                                       $argumentslist[0] = "0";              
                                       $showAllBytesObj = new SatDataView();

@@ -8,7 +8,7 @@
 <div class="sidebar-wrapper">
   <ul class="nav">
           <?php
-            if (isset($_SESSION['userId']) && $_SESSION['userPermission'] != 'Regular User') {
+            if (isset($_SESSION['userId']) && $_SESSION['userPermission'] != '2') {
               echo '<li class="active">';
             } else {
               echo '<li class="hide">';
@@ -96,7 +96,7 @@
 
         <!-- User List Table -->
         <div class="card" <?php 
-             if (isset($_SESSION['userUsername']) && $_SESSION['userPermission'] != 'Admin' ) {
+             if (isset($_SESSION['userUsername']) && $_SESSION['userPermission'] != '0' ) {
               echo 'style="display: none;"';
              }
           ?>>

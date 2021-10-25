@@ -127,9 +127,9 @@
                       <div class="form-group">
                         <label>Access Level</label>
                         <select class="form-control"  name="permission">
-                              <option value="Admin">Full Access Admin</option>
-                              <option value="Uploader Admin">Uploader Admin</option>
-                              <option value selected="Regular User">Regular User</option>
+                              <option value="0">Full Access Admin</option>
+                              <option value="1">Uploader Admin</option>
+                              <option value selected="2">Regular User</option>
                       </select> 
                       </div>
                     </div>

@@ -59,7 +59,7 @@ class Users extends Dbh {
                 $_SESSION['userCountry'] = $results[0]['countryUsers'];
                 $_SESSION['userPermission'] = $results[0]['permissionsUsers'];
 
-                if ($_SESSION['userPermission'] != 'Regular User'){
+                if ($_SESSION['userPermission'] != '2'){
                     header('Location:../pages/dashboard.php?status=loginsuccess');
                 exit();
                 } else {

@@ -162,9 +162,9 @@
                         <label>Access Level</label>
                         <select class="form-control" name="upaccess" list="permissions">
                               <option selected><?php echo $access?></option>
-                              <option value="Admin">Full Access Admin</option>
-                              <option value="Uploader Admin">Uploader Admin</option>
-                              <option value="Regular User">Regular User</option>
+                              <option value="0">Full Access Admin</option>
+                              <option value="1">Uploader Admin</option>
+                              <option value="2">Regular User</option>
                       </select>
                       </div>
                     </div>

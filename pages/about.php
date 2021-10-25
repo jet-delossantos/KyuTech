@@ -7,7 +7,7 @@
 <div class="sidebar-wrapper">
   <ul class="nav">
     <?php
-            if (isset($_SESSION['userId']) && $_SESSION['userPermission'] != 'Regular User') {
+            if (isset($_SESSION['userId']) && $_SESSION['userPermission'] != '2') {
               echo '<li>';
             } else {
               echo '<li class="hide">';
