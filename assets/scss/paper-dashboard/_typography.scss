@@ -19,7 +19,7 @@ a{
 h1, .h1 {
     font-size: $font-size-h1;
     line-height: 1.15;
-    margin-bottom: $margin-base-vertical * 2;
+    margin-bottom: $margin-base-vertical;
 
     small{
         font-weight: $font-weight-bold;
@@ -52,11 +52,11 @@ h5, .h5 {
     line-height: 1.4em;
     margin-bottom: 15px;
 }
-h6, .h6{
-    font-size: $font-size-h6;
-    font-weight: $font-weight-bold;
-    text-transform: uppercase;
-}
+// h6, .h6{
+//     font-size: $font-size-h6;
+//     font-weight: $font-weight-bold;
+//     text-transform: uppercase;
+//}
 p{
     &.description{
         font-size: 1.14em;

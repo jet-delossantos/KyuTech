@@ -3,11 +3,11 @@
           <div class="row">
             <nav class="footer-nav">
               <ul>
-                  <li><a href="#" target="_blank">Licenses</a></li>
+                  <li><a href="#" target="_blank" style="font-size:60%">Licenses</a></li>
                 </ul>
               </nav>
               <div class="credits ml-auto">
-                <span class="copyright">
+                <span class="copyright" style="font-size:80%">
                   © 2021, Kyutech
                 </span>
               </div>

@@ -28,12 +28,15 @@ body{
     transform:  translate(-50%, -50%);
     background: rgba(229, 229, 229, 0.75);
     border-radius: 25px;
+    box-shadow: 5px 5px 10px;
 }
+
 h1{
     color: rgb(0, 0, 0);
     text-transform: uppercase;
     font-weight: 500;
     text-align: center;
+    font-size: 42px;
 }
 
 h6{
@@ -162,3 +165,39 @@ h6{
     .even{
     background:#99FFD6;
     }
+
+@media screen and (min-width: 28.75em) {
+    .box {
+        padding: 20px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        transform:  translate(-50%, -50%);
+        background: rgba(229, 229, 229, 0.75);
+        border-radius: 25px;
+        box-shadow: 5px 5px 10px;
+    }
+
+    .box input[type = "text"],.box input[type = "password"]{
+        border: 0;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        border: 2px solid #575151;
+        padding: 14px 10px;
+        outline: none;
+        color: rgb(0, 0, 0);
+        border-radius: 20px;
+        transition: 0.25s;
+    }
+    h1{
+        font-size: 36px;
+    }
+
+    .box button[type = "submit"] , .box button[type = "register"]{
+        width: 100px;     
+    }
+      }
