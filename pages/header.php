@@ -52,7 +52,7 @@
   identifyToastStatus ($status);
 ?>
   <div class="wrapper">
-    <div class="sidebar" data-color="white" data-active-color="danger">
+    <div class="sidebar" data-color="white" data-active-color="primary">
       <div class="logo">
         <a class="simple-text logo-mini">
           <div class="logo-image-small">

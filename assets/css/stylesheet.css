@@ -20,15 +20,15 @@ body{
 } 
 
 .box{
-    width: 500px;
-    padding: 40px;
+    max-width: 500px;
+    padding: 30px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform:  translate(-50%, -50%);
     background: rgba(229, 229, 229, 0.75);
     border-radius: 25px;
-    box-shadow: 5px 5px 10px;
+    box-shadow: 5px 5px 15px;
 }
 
 h1{
@@ -66,7 +66,6 @@ h6{
     border: 0;
     background: #93DEFF;
     display: block;
-    margin: 10px auto;
     text-align: center;
     padding: 14px 40px;
     outline: none;
@@ -75,8 +74,7 @@ h6{
     transition: 0.25s;
     cursor: pointer;
     float: left;
-    width: 150px;
-    margin-right: 50px;
+    max-width: 150px;
     
 }
 .box button[type = "submit"]:hover{
@@ -87,7 +85,6 @@ h6{
     border: 0;
     background: #696969;
     display: block;
-    margin: 10px auto;
     text-align: center;
     padding: 14px 40px;
     outline: none;
@@ -96,8 +93,7 @@ h6{
     transition: 0.25s;
     cursor: pointer;
     float: right;
-    width: 150px;
-    margin-left: 50px;
+    max-width: 150px;
     
 }
 .box button[type = "register"]:hover{
@@ -107,8 +103,6 @@ h6{
 
 #forgot{
     color: #303030;
-    margin: 20px;
-    margin-left: 65px;
 }
 
 #forgot:hover{
