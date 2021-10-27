@@ -18,7 +18,7 @@
     width: 260px;
     left: 0;
     z-index: 1030;
-    border-right: 1px solid $bg-kyut-dashboard;
+    border-right: 1px solid #ddd;
 
     .sidebar-wrapper{
         position: relative;
@@ -27,7 +27,7 @@
         width: 260px;
         z-index: 4;
         padding-bottom: 100px;
-        background-color: $bg-kyut-sidepanel;
+        background-color: #f5f5f5;
 
         .dropdown .dropdown-backdrop{
           display: none !important;
@@ -155,7 +155,7 @@
         position: relative;
         padding: 7px $padding-base-horizontal;
         z-index: 4;
-        background-color: $bg-kyut-sidepanel;
+        background-color: #f5f5f5;
 
         a.logo-mini,
         a.logo-normal{
@@ -300,7 +300,7 @@
     position: relative;
     float: right;
     width: $sidebar-width;
-    background-color:$bg-kyut-dashboard;
+    background-color: #DDDDDD;
 
     @include transition (0.50s, cubic-bezier(0.685, 0.0473, 0.346, 1));
 
