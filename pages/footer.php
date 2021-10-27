@@ -7,7 +7,7 @@
                 </ul>
               </nav>
               <div class="credits ml-auto">
-                <span class="copyright" style="font-size:80%">
+                <span class="copyright" style="font-size:80%" color="inherit">
                   © 2021, Kyutech
                 </span>
               </div>
