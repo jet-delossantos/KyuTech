@@ -237,8 +237,8 @@
                   </div>
                 </div>
               </div>
-              <button class="btn btn-primary" name='sort-submit' type="submit">Sort</button>
-              <button type="button" class="btn btn-warning"><a class="text-light"
+              <button class="btn btn-warning" name='sort-submit' type="submit">Sort</button>
+              <button type="button" class="btn btn-primary"><a class="text-light"
                   href="satdata.php?query=default">Reset</a></button>
             </form>
           </div>
@@ -254,6 +254,7 @@
           <div class="card-body">
             <div class="table-responsive scrollable">
               <table id="example" class="table-fixed table">
+                <thead class=" text-primary">
                   <tr>
                     <th>ID</th>
                     <th>Date/Time</th>
@@ -263,6 +264,7 @@
                     <th>Sensor</th>
                     <th>Checksum</th>
                   </tr>
+                </thead>
                 <tbody>
                   <?php
                               if ($_SESSION['userPermission'] == '0'){
