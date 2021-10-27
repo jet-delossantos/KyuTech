@@ -357,7 +357,7 @@
           > a:not([data-toggle="collapse"]),
           > [data-toggle="collapse"] + div .nav li {
             &:before{
-              border-right: 17px solid #f5f5f5;
+              border-right: 17px solid $bg-kyut-sidepanel;
               border-top: 17px solid transparent;
               border-bottom: 17px solid transparent;
               content: "";
@@ -370,7 +370,7 @@
             }
 
             &:after{
-              border-right: 17px solid #DDDD;
+              border-right: 17px solid $bg-kyut-dashboard;
               border-top: 17px solid transparent;
               border-bottom: 17px solid transparent;
               content: "";

@@ -1,8 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500);
 
 html{
-  background-color: #f1f1f1;
-  font-family: "Montserrat";
+  background-color: #DDDDDD;
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
 }
 body{
     margin: 0;
@@ -78,7 +78,7 @@ h6{
     
 }
 .box button[type = "submit"]:hover{
-    background: #81c4e0;
+    background: #48B6B9;
 }
 
 .box button[type = "register"]{
@@ -88,7 +88,7 @@ h6{
     text-align: center;
     padding: 14px 40px;
     outline: none;
-    color: rgb(0, 0, 0);
+    color: #FFFFFF;
     border-radius: 20px;
     transition: 0.25s;
     cursor: pointer;
@@ -111,11 +111,11 @@ h6{
 }
 
 .footer {
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 25;
     width: 100%;
-    text-align: center;
+    text-align: -webkit-right;
 }
 
 .scrollable {
@@ -192,6 +192,6 @@ h6{
     }
 
     .box button[type = "submit"] , .box button[type = "register"]{
-        width: 100px;     
+        min-width: 100px;     
     }
       }
