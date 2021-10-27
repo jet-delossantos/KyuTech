@@ -3,7 +3,7 @@
           <div class="row">
             <nav class="footer-nav">
               <ul>
-                  <li><a href="#" target="_blank" style="font-size:60%">Licenses</a></li>
+                  <li><a href="#" target="_blank" style="font-size:60%" color="inherit">Licenses</a></li>
                 </ul>
               </nav>
               <div class="credits ml-auto">

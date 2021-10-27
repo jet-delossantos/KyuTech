@@ -104,11 +104,10 @@
             <h4 class="card-title"> User List</h4>
           </div>
           <div class="card-body">
-            <button type="submit" class="btn btn-success" name="upload-button"><a class='text-light'
+            <button type="submit" class="btn btn-primary" name="upload-button"><a class='text-light'
                 href="adduser.php">Add New User</a></button>
             <div class="table-responsive scrollable">
               <table class="table">
-                <thead class=" text-primary">
                   <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Username</th>
@@ -119,7 +118,6 @@
                     <th scope="col">Edit</th>
                     <th scope="col">Delete</th>
                   </tr>
-                </thead>
                 <tbody>
                   <?php
                       $showAllUsersObj = new UsersView();
@@ -140,12 +138,12 @@
                             <td>'.$mobile.'</td>
                             <td>'.$access.'</td>
                             <td>
-                            <button type="" class="btn btn-primary btn-round">
+                            <button type="" class="btn btn-warning btn-round">
                                 <a class="text-light" href="edituser.php?updatebutton='.$id.'"><i class="nc-icon nc-align-left-2"></i></a>
                             </button>
                             </td>
                             <td>
-                          <button type="" class="btn btn-warning btn-round">
+                          <button type="" class="btn btn-danger btn-round">
                                 <a href="../includes/deleteuser.inc.php?deletebutton='.$id.'"><i class="nc-icon nc-basket"></i></a>
                               </button>
                             </td>
@@ -170,11 +168,10 @@
             <form class="form-horizontal" action="../includes/uploadfile.inc.php" method="POST"
               enctype="multipart/form-data">
               <input type="file" name="satfile">
-              <button type="submit" class="btn btn-success" name="upload-button">Upload Sat File</button>
+              <button type="submit" class="btn btn-primary" name="upload-button">Upload Sat File</button>
             </form>
             <div class="table-responsive scrollable">
               <table class="table">
-                <thead class=" text-primary">
                   <tr>
                     <th scope="col">ID</th>
                     <th scope="col">File Name</th>
@@ -183,7 +180,6 @@
                     <th scope="col">Uploader</th>
                     <th scope="col">Delete</th>
                   </tr>
-                </thead>
                 <tbody>
                   <?php
                     $showAllFilesObj = new SatDataView();
@@ -216,7 +212,7 @@
                           ';
                         } else {
                           echo '
-                          <button type="" class="btn btn-warning btn-round">
+                          <button type="" class="btn btn-danger btn-round">
                             <a href="../includes/deletefile.inc.php?deletefile='.$idFile.'&filelocation='.$nameFile.'"><i class="nc-icon nc-basket"></i></a>
                           </button>
                           </td>
