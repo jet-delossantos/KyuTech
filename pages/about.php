@@ -105,9 +105,11 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            <h4 class="card-title"> PAGE IS UNDER CONSTRUCTION</h4>
+            <center>
+            <h4 class="card-title"> THIS PAGE IS ALMOST READY </h4>
             <p class="card-category"> Thank you for your patience</p>
-            <img src="../assets/img/Building 01.jpg" alt="under construction">
+            <img src="../assets/img/underconstruction.png" alt="under construction">
+          </center>
           </div>
         </div>
       </div>
