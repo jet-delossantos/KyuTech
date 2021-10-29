@@ -107,7 +107,7 @@
           <div class="card-header">
             <h4 class="card-title"> THIS PAGE IS ALMOST READY </h4>
             <p class="card-category"> Thank you for your patience</p>
-            <img src="../assets/img/underconstruction.png" alt="under construction" id="imageuc">
+            <img src="../assets/img/underconstruction.png" alt="under construction" class="imageuc">
           </div>
         </div>
       </div>
