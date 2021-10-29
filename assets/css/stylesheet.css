@@ -111,9 +111,9 @@ h6{
 }
 
 .footer {
-    position: relative;
+    position: fixed;
     left: 0;
-    bottom: 25;
+    bottom: 0;
     width: 100%;
     text-align: -webkit-right;
 }
