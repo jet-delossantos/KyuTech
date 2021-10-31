@@ -115,7 +115,7 @@
                     <th scope="col">Email</th>
                     <th scope="col">Country</th>
                     <th scope="col">Contact</th>
-                    <th scope="col">Access</th>
+                    <th scope="col">Access Level</th>
                     <th scope="col">Edit</th>
                     <th scope="col">Delete</th>
                   </tr>
@@ -138,7 +138,15 @@
                             <td>'.$email.'</td>
                             <td>'.$country.'</td>
                             <td>'.$mobile.'</td>
-                            <td>'.$access.'</td>
+                            <td>'; 
+                            if ($access == 0){
+                              echo 'Admin';
+                            } else if ($access == 1){
+                              echo  'Uploader Admin';
+                            } else if ($access == 2){
+                              echo 'Regular User';
+                            }
+                            echo '</td>
                             <td>
                             <button type="" class="btn btn-primary btn-round">
                                 <a class="text-light" href="edituser.php?updatebutton='.$id.'"><i class="nc-icon nc-align-left-2"></i></a>
@@ -208,7 +216,7 @@
                           <td>'.$dateFile.'</td>
                           <td>'.$uploader.'</td>
                           <td>';
-                        if ($_SESSION['userPermission'] != 'Admin') {
+                        if ($_SESSION['userPermission'] != '0') {
                           echo '
                             [NO ACCESS]
                           </td>
